@@ -1,70 +1,30 @@
 import React, { useEffect } from 'react';
-import styled from '@emotion/styled';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputRightAddon,
+  Tooltip,
+  useColorModeValue,
+  Flex,
+  Text,
+  Badge
+} from '@chakra-ui/react';
+import { InfoIcon } from '@chakra-ui/icons';
 import { setTemperature } from '../../store/parametersSlice';
 import { setTemperatureRange } from '../../store/materialsSlice';
-
-const InputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`;
-
-const Label = styled.label`
-  font-size: 0.9rem;
-  color: var(--secondary-color);
-`;
-
-const InputWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Input = styled.input`
-  padding: 8px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 1rem;
-  width: 100%;
-  
-  &:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
-  }
-  
-  &:disabled {
-    background-color: #f5f5f5;
-    cursor: not-allowed;
-  }
-  
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    opacity: 1;
-  }
-`;
-
-const UnitLabel = styled.span`
-  margin-left: 8px;
-  color: var(--secondary-color);
-  font-size: 0.9rem;
-  min-width: 30px;
-`;
-
-const TemperatureRangeIndicator = styled.div`
-  margin-top: 4px;
-  font-size: 0.8rem;
-  color: ${props => 
-    props.range === 'room' ? 'var(--success-color)' : 
-    props.range === 'warm' ? 'var(--warning-color)' : 
-    'var(--error-color)'
-  };
-`;
 
 const TemperatureInput = () => {
   const dispatch = useDispatch();
   const { temperature, isMetric } = useSelector(state => state.parameters);
   const { selected: selectedMaterial, temperatureRange } = useSelector(state => state.materials);
+  
+  // Style variables based on color mode
+  const borderColor = useColorModeValue('gray.200', 'gray.600');
+  const tooltipBg = useColorModeValue('secondary.700', 'secondary.800');
   
   const handleChange = (e) => {
     const value = parseInt(e.target.value, 10);
@@ -78,11 +38,11 @@ const TemperatureInput = () => {
     const tempCelsius = isMetric ? temperature : (temperature - 32) * 5 / 9;
     
     if (tempCelsius <= 100) {
-      return { range: 'room', text: 'Room Temperature (≤ 100°C)' };
+      return { range: 'room', text: 'Room Temperature (≤ 100°C)', color: 'success' };
     } else if (tempCelsius <= 300) {
-      return { range: 'warm', text: 'Warm Temperature (100-300°C)' };
+      return { range: 'warm', text: 'Warm Temperature (100-300°C)', color: 'warning' };
     } else {
-      return { range: 'hot', text: 'Hot Temperature (> 300°C)' };
+      return { range: 'hot', text: 'Hot Temperature (> 300°C)', color: 'danger' };
     }
   };
   
@@ -95,28 +55,71 @@ const TemperatureInput = () => {
     }
   }, [dispatch, temperature, isMetric, selectedMaterial, tempRange.range, temperatureRange]);
   
+  // Get unit display text
+  const unitText = isMetric ? '°C' : '°F';
+  
+  // Get tooltip text with unit-specific guidance
+  const getTooltipContent = () => {
+    const minTemp = isMetric ? '20°C' : '68°F';
+    const maxTemp = isMetric ? '500°C' : '932°F';
+    
+    return (
+      <Box>
+        <Text>Processing temperature</Text>
+        <Text fontSize="xs" mt={1}>
+          Common range: {minTemp} - {maxTemp}
+        </Text>
+        <Text fontSize="xs" mt={1}>
+          Temperature affects material properties and required force
+        </Text>
+      </Box>
+    );
+  };
+  
   return (
-    <InputContainer>
-      <Label htmlFor="temperature-input">Temperature</Label>
-      <InputWrapper>
-        <Input
-          id="temperature-input"
-          type="number"
-          min={isMetric ? "20" : "68"}
-          max={isMetric ? "500" : "932"}
-          step="1"
-          value={temperature}
-          onChange={handleChange}
-          disabled={!selectedMaterial}
-        />
-        <UnitLabel>{isMetric ? '°C' : '°F'}</UnitLabel>
-      </InputWrapper>
-      {selectedMaterial && (
-        <TemperatureRangeIndicator range={tempRange.range}>
-          {tempRange.text}
-        </TemperatureRangeIndicator>
-      )}
-    </InputContainer>
+    <Box mb={4} minW={["100%", "200px"]}>
+      <FormControl>
+        <Flex align="center">
+          <FormLabel fontSize="sm" mb={1}>Temperature</FormLabel>
+          <Tooltip 
+            label={getTooltipContent()} 
+            placement="top" 
+            bg={tooltipBg} 
+            hasArrow
+          >
+            <InfoIcon boxSize={3} color="gray.500" />
+          </Tooltip>
+        </Flex>
+        
+        <InputGroup>
+          <Input
+            value={temperature || ''}
+            onChange={handleChange}
+            type="number"
+            min={isMetric ? "20" : "68"}
+            max={isMetric ? "500" : "932"}
+            placeholder="0"
+            borderColor={borderColor}
+            disabled={!selectedMaterial}
+          />
+          <InputRightAddon children={unitText} bg="gray.100" />
+        </InputGroup>
+        
+        {/* Temperature range indicator */}
+        {selectedMaterial && (
+          <Badge 
+            colorScheme={tempRange.color} 
+            mt={2} 
+            fontSize="xs" 
+            px={2} 
+            py={1} 
+            borderRadius="md"
+          >
+            {tempRange.text}
+          </Badge>
+        )}
+      </FormControl>
+    </Box>
   );
 };
 

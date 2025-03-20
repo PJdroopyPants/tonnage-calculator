@@ -1,63 +1,28 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputRightElement,
+  Tooltip,
+  useColorModeValue,
+  Flex,
+  Text
+} from '@chakra-ui/react';
+import { InfoIcon } from '@chakra-ui/icons';
 import { setBatchQuantity } from '../../store/parametersSlice';
-
-const InputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-`;
-
-const Label = styled.label`
-  font-size: 0.9rem;
-  color: var(--secondary-color);
-`;
-
-const InputWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  position: relative;
-`;
-
-const Input = styled.input`
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  
-  &:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
-  }
-  
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-`;
-
-const Unit = styled.div`
-  position: absolute;
-  right: 12px;
-  color: var(--text-light);
-  font-size: 0.9rem;
-  pointer-events: none;
-`;
-
-const HelpText = styled.div`
-  font-size: 0.8rem;
-  color: var(--text-light);
-  margin-top: 4px;
-`;
 
 const BatchQuantityInput = () => {
   const dispatch = useDispatch();
   const batchQuantity = useSelector(state => state.parameters.batchQuantity);
+  
+  // Style variables based on color mode
+  const borderColor = useColorModeValue('gray.200', 'gray.600');
+  const tooltipBg = useColorModeValue('secondary.700', 'secondary.800');
+  const unitColor = useColorModeValue('gray.500', 'gray.400');
   
   const handleChange = (e) => {
     const value = parseInt(e.target.value) || 1;
@@ -66,21 +31,54 @@ const BatchQuantityInput = () => {
     }
   };
   
+  // Tooltip content
+  const getTooltipContent = () => {
+    return (
+      <Box>
+        <Text>Production batch size</Text>
+        <Text fontSize="xs" mt={1}>
+          Number of identical parts to produce
+        </Text>
+        <Text fontSize="xs" mt={1}>
+          Affects total force requirements and tool wear calculations
+        </Text>
+      </Box>
+    );
+  };
+  
   return (
-    <InputContainer>
-      <Label htmlFor="batch-quantity">Batch Quantity</Label>
-      <InputWrapper>
-        <Input
-          id="batch-quantity"
-          type="number"
-          min="1"
-          value={batchQuantity}
-          onChange={handleChange}
-        />
-        <Unit>pcs</Unit>
-      </InputWrapper>
-      <HelpText>Number of identical parts to produce</HelpText>
-    </InputContainer>
+    <Box mb={4} minW={["100%", "200px"]}>
+      <FormControl>
+        <Flex align="center">
+          <FormLabel fontSize="sm" mb={1}>Batch Quantity</FormLabel>
+          <Tooltip 
+            label={getTooltipContent()} 
+            placement="top" 
+            bg={tooltipBg} 
+            hasArrow
+          >
+            <InfoIcon boxSize={3} color="gray.500" />
+          </Tooltip>
+        </Flex>
+        
+        <InputGroup>
+          <Input
+            value={batchQuantity || 1}
+            onChange={handleChange}
+            type="number"
+            min="1"
+            borderColor={borderColor}
+          />
+          <InputRightElement width="3rem" pointerEvents="none">
+            <Text fontSize="sm" color={unitColor}>pcs</Text>
+          </InputRightElement>
+        </InputGroup>
+        
+        <Text fontSize="xs" color="gray.500" mt={1}>
+          Number of identical parts to produce
+        </Text>
+      </FormControl>
+    </Box>
   );
 };
 
