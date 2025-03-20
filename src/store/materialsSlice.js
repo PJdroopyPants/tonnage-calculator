@@ -4,8 +4,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchMaterials = createAsyncThunk(
   'materials/fetchMaterials',
   async () => {
-    // Get the base URL for GitHub Pages deployment
-    const basePath = process.env.PUBLIC_URL || '';
+    // Use the full repository path for GitHub Pages
+    const basePath = window.location.hostname === 'pjdroopypants.github.io' ? '/tonnage-calculator' : '';
     const response = await fetch(`${basePath}/data/materials.JSON`);
     if (!response.ok) {
       throw new Error('Failed to fetch materials');
