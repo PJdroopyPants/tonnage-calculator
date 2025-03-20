@@ -22,7 +22,8 @@ const BatchQuantityInput = () => {
   // Style variables based on color mode
   const borderColor = useColorModeValue('gray.200', 'gray.600');
   const tooltipBg = useColorModeValue('secondary.700', 'secondary.800');
-  const unitColor = useColorModeValue('gray.500', 'gray.400');
+  const unitColor = useColorModeValue('gray.600', 'gray.300');
+  const textColor = useColorModeValue('gray.600', 'gray.400');
   
   const handleChange = (e) => {
     const value = parseInt(e.target.value) || 1;
@@ -70,11 +71,11 @@ const BatchQuantityInput = () => {
             borderColor={borderColor}
           />
           <InputRightElement width="3rem" pointerEvents="none">
-            <Text fontSize="sm" color={unitColor}>pcs</Text>
+            <Text fontSize="sm" color={unitColor} fontWeight="medium">pcs</Text>
           </InputRightElement>
         </InputGroup>
         
-        <Text fontSize="xs" color="gray.500" mt={1}>
+        <Text fontSize="xs" color={textColor} mt={1}>
           Number of identical parts to produce
         </Text>
       </FormControl>

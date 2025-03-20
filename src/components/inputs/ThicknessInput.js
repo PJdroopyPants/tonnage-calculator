@@ -24,6 +24,8 @@ const ThicknessInput = () => {
   // Style variables based on color mode
   const borderColor = useColorModeValue('gray.200', 'gray.600');
   const tooltipBg = useColorModeValue('secondary.700', 'secondary.800');
+  const addonBg = useColorModeValue('gray.100', 'gray.700');
+  const addonColor = useColorModeValue('gray.800', 'white');
   
   const handleChange = (e) => {
     // Get value and ensure it's a number
@@ -92,7 +94,12 @@ const ThicknessInput = () => {
             placeholder="0"
             borderColor={borderColor}
           />
-          <InputRightAddon children={unitText} bg="gray.100" />
+          <InputRightAddon 
+            children={unitText} 
+            bg={addonBg} 
+            color={addonColor}
+            borderColor={borderColor}
+          />
         </InputGroup>
         
         {/* Validation feedback */}

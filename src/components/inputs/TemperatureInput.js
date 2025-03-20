@@ -25,6 +25,8 @@ const TemperatureInput = () => {
   // Style variables based on color mode
   const borderColor = useColorModeValue('gray.200', 'gray.600');
   const tooltipBg = useColorModeValue('secondary.700', 'secondary.800');
+  const addonBg = useColorModeValue('gray.100', 'gray.700');
+  const addonColor = useColorModeValue('gray.800', 'white');
   
   const handleChange = (e) => {
     const value = parseInt(e.target.value, 10);
@@ -102,7 +104,12 @@ const TemperatureInput = () => {
             borderColor={borderColor}
             disabled={!selectedMaterial}
           />
-          <InputRightAddon children={unitText} bg="gray.100" />
+          <InputRightAddon 
+            children={unitText} 
+            bg={addonBg} 
+            color={addonColor}
+            borderColor={borderColor}
+          />
         </InputGroup>
         
         {/* Temperature range indicator */}
