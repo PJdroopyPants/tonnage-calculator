@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tonnage-calculator/static/css/main.c2c8e6d7.css",
-    "main.js": "/tonnage-calculator/static/js/main.ea9bdbfb.js",
+    "main.js": "/tonnage-calculator/static/js/main.de9a6647.js",
     "index.html": "/tonnage-calculator/index.html",
     "main.c2c8e6d7.css.map": "/tonnage-calculator/static/css/main.c2c8e6d7.css.map",
-    "main.ea9bdbfb.js.map": "/tonnage-calculator/static/js/main.ea9bdbfb.js.map"
+    "main.de9a6647.js.map": "/tonnage-calculator/static/js/main.de9a6647.js.map"
   },
   "entrypoints": [
     "static/css/main.c2c8e6d7.css",
-    "static/js/main.ea9bdbfb.js"
+    "static/js/main.de9a6647.js"
   ]
 }
