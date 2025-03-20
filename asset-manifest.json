@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/tonnage-calculator/static/css/main.c2c8e6d7.css",
-    "main.js": "/tonnage-calculator/static/js/main.816fca7b.js",
+    "main.js": "/tonnage-calculator/static/js/main.c22ab58c.js",
     "static/media/SUTHERLAND_PRESSES_LOGO.svg": "/tonnage-calculator/static/media/SUTHERLAND_PRESSES_LOGO.5b8c3d9fbe5fa3d510e4657c45d3bce7.svg",
     "index.html": "/tonnage-calculator/index.html",
     "main.c2c8e6d7.css.map": "/tonnage-calculator/static/css/main.c2c8e6d7.css.map",
-    "main.816fca7b.js.map": "/tonnage-calculator/static/js/main.816fca7b.js.map"
+    "main.c22ab58c.js.map": "/tonnage-calculator/static/js/main.c22ab58c.js.map"
   },
   "entrypoints": [
     "static/css/main.c2c8e6d7.css",
-    "static/js/main.816fca7b.js"
+    "static/js/main.c22ab58c.js"
   ]
 }
