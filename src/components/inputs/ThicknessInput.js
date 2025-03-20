@@ -1,83 +1,120 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputRightAddon,
+  Tooltip,
+  useColorModeValue,
+  Flex,
+  Icon,
+  Text
+} from '@chakra-ui/react';
+import { InfoIcon } from '@chakra-ui/icons';
 import { setThickness } from '../../store/parametersSlice';
-
-const InputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`;
-
-const Label = styled.label`
-  font-size: 0.9rem;
-  color: var(--secondary-color);
-`;
-
-const InputWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Input = styled.input`
-  padding: 8px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 1rem;
-  width: 100%;
-  
-  &:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
-  }
-  
-  &:disabled {
-    background-color: #f5f5f5;
-    cursor: not-allowed;
-  }
-  
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    opacity: 1;
-  }
-`;
-
-const UnitLabel = styled.span`
-  margin-left: 8px;
-  color: var(--secondary-color);
-  font-size: 0.9rem;
-  min-width: 30px;
-`;
 
 const ThicknessInput = () => {
   const dispatch = useDispatch();
   const { thickness, isMetric } = useSelector(state => state.parameters);
   const { selected: selectedMaterial } = useSelector(state => state.materials);
   
+  // Style variables based on color mode
+  const borderColor = useColorModeValue('gray.200', 'gray.600');
+  const tooltipBg = useColorModeValue('secondary.700', 'secondary.800');
+  
   const handleChange = (e) => {
-    const value = parseFloat(e.target.value);
-    if (!isNaN(value) && value > 0) {
-      dispatch(setThickness(value));
+    // Get value and ensure it's a number
+    let value = e.target.value;
+    
+    // Remove non-numeric characters except for decimal point
+    value = value.replace(/[^0-9.]/g, '');
+    
+    // Ensure only one decimal point
+    const countDecimalPoints = (value.match(/\./g) || []).length;
+    if (countDecimalPoints > 1) {
+      value = value.substr(0, value.lastIndexOf('.'));
     }
+    
+    // Convert to number
+    const numValue = parseFloat(value) || 0;
+    
+    // Update the state
+    dispatch(setThickness(numValue));
+  };
+  
+  // Get unit display text
+  const unitText = isMetric ? 'mm' : 'in';
+  
+  // Get tooltip text with unit-specific guidance
+  const getTooltipContent = () => {
+    const minThickness = isMetric ? '0.5mm' : '0.02in';
+    const maxThickness = isMetric ? '25mm' : '1.0in';
+    
+    return (
+      <Box>
+        <Text>Enter material thickness</Text>
+        <Text fontSize="xs" mt={1}>
+          Recommended range: {minThickness} - {maxThickness}
+        </Text>
+        {selectedMaterial && (
+          <Text fontSize="xs" mt={1}>
+            Typical {selectedMaterial.category} range: 
+            {isMetric ? ' 0.8mm - 6mm' : ' 0.03in - 0.25in'}
+          </Text>
+        )}
+      </Box>
+    );
   };
   
   return (
-    <InputContainer>
-      <Label htmlFor="thickness-input">Material Thickness</Label>
-      <InputWrapper>
-        <Input
-          id="thickness-input"
-          type="number"
-          min="0.01"
-          step={isMetric ? "0.1" : "0.001"}
-          value={thickness}
-          onChange={handleChange}
-          disabled={!selectedMaterial}
-        />
-        <UnitLabel>{isMetric ? 'mm' : 'in'}</UnitLabel>
-      </InputWrapper>
-    </InputContainer>
+    <Box mb={4} minW={["100%", "200px"]}>
+      <FormControl>
+        <Flex align="center">
+          <FormLabel fontSize="sm" mb={1}>Thickness</FormLabel>
+          <Tooltip 
+            label={getTooltipContent()} 
+            placement="top" 
+            bg={tooltipBg} 
+            hasArrow
+          >
+            <InfoIcon boxSize={3} color="gray.500" />
+          </Tooltip>
+        </Flex>
+        
+        <InputGroup>
+          <Input
+            value={thickness || ''}
+            onChange={handleChange}
+            type="text"
+            placeholder="0"
+            borderColor={borderColor}
+          />
+          <InputRightAddon children={unitText} bg="gray.100" />
+        </InputGroup>
+        
+        {/* Validation feedback */}
+        {thickness <= 0 && (
+          <Text fontSize="xs" color="danger.500" mt={1}>
+            Please enter a valid thickness
+          </Text>
+        )}
+        
+        {thickness > 0 && thickness < (isMetric ? 0.5 : 0.02) && (
+          <Text fontSize="xs" color="warning.500" mt={1}>
+            Thickness is below recommended minimum
+          </Text>
+        )}
+        
+        {thickness > (isMetric ? 25 : 1.0) && (
+          <Text fontSize="xs" color="warning.500" mt={1}>
+            Thickness exceeds recommended maximum
+          </Text>
+        )}
+      </FormControl>
+    </Box>
   );
 };
 
