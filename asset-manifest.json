@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/tonnage-calculator/static/js/main.d12d7583.js",
+    "index.html": "/tonnage-calculator/index.html",
+    "main.d12d7583.js.map": "/tonnage-calculator/static/js/main.d12d7583.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.d12d7583.js"
+  ]
+}

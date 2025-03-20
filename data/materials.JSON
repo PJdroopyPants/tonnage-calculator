@@ -1,0 +1,1872 @@
+{
+  "aluminum_grade_2024t3": {
+    "name": "Aluminum 2024-T3",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 483,
+        "yieldStrength": 345,
+        "shearStrength": 265,
+        "elongation": 18,
+        "hardness": 120,
+        "density": 2.78,
+        "modulus": 73.1,
+        "reverseFactor": 0.73,
+        "thermalConductivity": 121,
+        "strainHardeningExponent": 0.16,
+        "anisotropyRatio": 0.58,
+        "minimumBendRadius": 4.0,
+        "surfaceRoughness": 0.9,
+        "frictionCoefficient": 0.48
+      },
+      "warm": {
+        "tensileStrength": 379,
+        "yieldStrength": 310,
+        "shearStrength": 208,
+        "elongation": 23,
+        "strainHardeningExponent": 0.14,
+        "anisotropyRatio": 0.56,
+        "minimumBendRadius": 3.7,
+        "surfaceRoughness": 1.1,
+        "frictionCoefficient": 0.46
+      },
+      "hot": {
+        "tensileStrength": 186,
+        "yieldStrength": 138,
+        "shearStrength": 102,
+        "elongation": 55,
+        "strainHardeningExponent": 0.12,
+        "anisotropyRatio": 0.53,
+        "minimumBendRadius": 3.3,
+        "surfaceRoughness": 1.3,
+        "frictionCoefficient": 0.43
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "High",
+      "springback": "High",
+      "minimumBendRadius": "2.0t",
+      "recommendedPunchSpeed": "100-250mm/s",
+      "temperatureRange": "20-200°C",
+      "recommendedDieClearance": "7%",
+      "lubricantType": "Heavy-duty oil",
+      "grainDirectionEffect": "Significant",
+      "maxFormingDepth": "55% of diameter"
+    }
+  },
+  "aluminum_grade_3003h14": {
+    "name": "Aluminum 3003-H14",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 152,
+        "yieldStrength": 145,
+        "shearStrength": 84,
+        "elongation": 8,
+        "hardness": 40,
+        "density": 2.73,
+        "modulus": 68.9,
+        "reverseFactor": 0.78,
+        "thermalConductivity": 159,
+        "strainHardeningExponent": 0.12,
+        "anisotropyRatio": 0.62,
+        "minimumBendRadius": 2.5,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.46
+      },
+      "warm": {
+        "tensileStrength": 145,
+        "yieldStrength": 130,
+        "shearStrength": 80,
+        "elongation": 16,
+        "strainHardeningExponent": 0.10,
+        "anisotropyRatio": 0.60,
+        "minimumBendRadius": 2.3,
+        "surfaceRoughness": 0.8,
+        "frictionCoefficient": 0.44
+      },
+      "hot": {
+        "tensileStrength": 96,
+        "yieldStrength": 62,
+        "shearStrength": 53,
+        "elongation": 20,
+        "strainHardeningExponent": 0.08,
+        "anisotropyRatio": 0.57,
+        "minimumBendRadius": 2.0,
+        "surfaceRoughness": 1.0,
+        "frictionCoefficient": 0.41
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Low-Medium",
+      "springback": "Medium",
+      "minimumBendRadius": "1.0t",
+      "recommendedPunchSpeed": "150-300mm/s",
+      "temperatureRange": "20-230°C",
+      "recommendedDieClearance": "5.5%",
+      "lubricantType": "Light to medium oil",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "65% of diameter"
+    }
+  },
+  "aluminum_grade_5052h32": {
+    "name": "Aluminum 5052-H32",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 228,
+        "yieldStrength": 193,
+        "shearStrength": 125,
+        "elongation": 12,
+        "hardness": 60,
+        "density": 2.68,
+        "modulus": 70.3,
+        "reverseFactor": 0.77,
+        "thermalConductivity": 138,
+        "strainHardeningExponent": 0.13,
+        "anisotropyRatio": 0.64,
+        "minimumBendRadius": 2.8,
+        "surfaceRoughness": 0.7,
+        "frictionCoefficient": 0.47
+      },
+      "warm": {
+        "tensileStrength": 190,
+        "yieldStrength": 160,
+        "shearStrength": 104,
+        "elongation": 15,
+        "strainHardeningExponent": 0.11,
+        "anisotropyRatio": 0.62,
+        "minimumBendRadius": 2.5,
+        "surfaceRoughness": 0.9,
+        "frictionCoefficient": 0.45
+      },
+      "hot": {
+        "tensileStrength": 135,
+        "yieldStrength": 110,
+        "shearStrength": 74,
+        "elongation": 18,
+        "strainHardeningExponent": 0.09,
+        "anisotropyRatio": 0.59,
+        "minimumBendRadius": 2.2,
+        "surfaceRoughness": 1.1,
+        "frictionCoefficient": 0.42
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium",
+      "springback": "Medium-High",
+      "minimumBendRadius": "1.5t",
+      "recommendedPunchSpeed": "125-275mm/s",
+      "temperatureRange": "20-220°C",
+      "recommendedDieClearance": "6%",
+      "lubricantType": "Medium oil",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "63% of diameter"
+    }
+  },
+  "aluminum_grade_5083": {
+    "name": "Aluminum 5083 (Marine Grade)",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 300,
+        "yieldStrength": 190,
+        "shearStrength": 165,
+        "elongation": 16,
+        "hardness": 81,
+        "density": 2.66,
+        "modulus": 70.3,
+        "reverseFactor": 0.77,
+        "thermalConductivity": 117,
+        "strainHardeningExponent": 0.16,
+        "anisotropyRatio": 0.68,
+        "minimumBendRadius": 2.0,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.44
+      },
+      "warm": {
+        "tensileStrength": 245,
+        "yieldStrength": 120,
+        "shearStrength": 135,
+        "elongation": 25,
+        "strainHardeningExponent": 0.14,
+        "anisotropyRatio": 0.66,
+        "minimumBendRadius": 1.8,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.42
+      },
+      "hot": {
+        "tensileStrength": 200,
+        "yieldStrength": 95,
+        "shearStrength": 110,
+        "elongation": 28,
+        "strainHardeningExponent": 0.12,
+        "anisotropyRatio": 0.64,
+        "minimumBendRadius": 1.6,
+        "surfaceRoughness": 0.8,
+        "frictionCoefficient": 0.40
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium",
+      "springback": "Medium-High",
+      "minimumBendRadius": "2.0t",
+      "recommendedPunchSpeed": "150-300mm/s",
+      "temperatureRange": "20-260°C",
+      "recommendedDieClearance": "5.5%",
+      "lubricantType": "Light to medium oil",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "65% of diameter"
+    }
+  },
+  "aluminum_grade_5182h19": {
+    "name": "Aluminum 5182-H19 (Body Sheet)",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 420,
+        "yieldStrength": 395,
+        "shearStrength": 231,
+        "elongation": 4,
+        "hardness": 112,
+        "density": 2.65,
+        "modulus": 69.6,
+        "reverseFactor": 0.70,
+        "thermalConductivity": 126,
+        "strainHardeningExponent": 0.18,
+        "anisotropyRatio": 0.72,
+        "minimumBendRadius": 3.0,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.48
+      },
+      "warm": {
+        "tensileStrength": 310,
+        "yieldStrength": 260,
+        "shearStrength": 171,
+        "elongation": 8,
+        "strainHardeningExponent": 0.16,
+        "anisotropyRatio": 0.70,
+        "minimumBendRadius": 2.5,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.45
+      },
+      "hot": {
+        "tensileStrength": 240,
+        "yieldStrength": 200,
+        "shearStrength": 132,
+        "elongation": 12,
+        "strainHardeningExponent": 0.14,
+        "anisotropyRatio": 0.68,
+        "minimumBendRadius": 2.0,
+        "surfaceRoughness": 0.8,
+        "frictionCoefficient": 0.42
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Moderate to High",
+      "springback": "High",
+      "minimumBendRadius": "2.0t",
+      "recommendedPunchSpeed": "50-150mm/s",
+      "temperatureRange": "20-300°C",
+      "recommendedDieClearance": "6.0%",
+      "lubricantType": "Medium to heavy oil",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "48% of diameter"
+    }
+  },
+  "aluminum_grade_5251h22": {
+    "name": "Aluminum 5251-H22 (Appliance Grade)",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 210,
+        "yieldStrength": 165,
+        "shearStrength": 116,
+        "elongation": 14,
+        "hardness": 65,
+        "density": 2.69,
+        "modulus": 70.3,
+        "reverseFactor": 0.76,
+        "thermalConductivity": 134,
+        "strainHardeningExponent": 0.13,
+        "anisotropyRatio": 0.66,
+        "minimumBendRadius": 2.0,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.47
+      },
+      "warm": {
+        "tensileStrength": 175,
+        "yieldStrength": 140,
+        "shearStrength": 96,
+        "elongation": 18,
+        "strainHardeningExponent": 0.11,
+        "anisotropyRatio": 0.64,
+        "minimumBendRadius": 1.8,
+        "surfaceRoughness": 0.7,
+        "frictionCoefficient": 0.45
+      },
+      "hot": {
+        "tensileStrength": 140,
+        "yieldStrength": 115,
+        "shearStrength": 77,
+        "elongation": 22,
+        "strainHardeningExponent": 0.09,
+        "anisotropyRatio": 0.61,
+        "minimumBendRadius": 1.6,
+        "surfaceRoughness": 0.9,
+        "frictionCoefficient": 0.42
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium",
+      "springback": "Medium-High",
+      "minimumBendRadius": "2.0t",
+      "recommendedPunchSpeed": "150-300mm/s",
+      "temperatureRange": "20-260°C",
+      "recommendedDieClearance": "5.5%",
+      "lubricantType": "Light to medium oil",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "65% of diameter"
+    }
+  },
+  "aluminum_grade_5754": {
+    "name": "Aluminum 5754 (Marine & Automotive)",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 270,
+        "yieldStrength": 215,
+        "shearStrength": 149,
+        "elongation": 14,
+        "hardness": 80,
+        "density": 2.67,
+        "modulus": 70.3,
+        "reverseFactor": 0.75,
+        "thermalConductivity": 125,
+        "strainHardeningExponent": 0.17,
+        "anisotropyRatio": 0.66,
+        "minimumBendRadius": 1.8,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.45
+      },
+      "warm": {
+        "tensileStrength": 205,
+        "yieldStrength": 85,
+        "shearStrength": 113,
+        "elongation": 27,
+        "strainHardeningExponent": 0.15,
+        "anisotropyRatio": 0.64,
+        "minimumBendRadius": 1.6,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.43
+      },
+      "hot": {
+        "tensileStrength": 165,
+        "yieldStrength": 70,
+        "shearStrength": 91,
+        "elongation": 30,
+        "strainHardeningExponent": 0.13,
+        "anisotropyRatio": 0.62,
+        "minimumBendRadius": 1.4,
+        "surfaceRoughness": 0.8,
+        "frictionCoefficient": 0.41
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium",
+      "springback": "Medium-High",
+      "minimumBendRadius": "1.8t",
+      "recommendedPunchSpeed": "150-300mm/s",
+      "temperatureRange": "20-260°C",
+      "recommendedDieClearance": "5.5%",
+      "lubricantType": "Light to medium oil",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "65% of diameter"
+    }
+  },
+  "aluminum_grade_6016t4": {
+    "name": "Aluminum 6016-T4 (Automotive Body)",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 260,
+        "yieldStrength": 130,
+        "shearStrength": 143,
+        "elongation": 26,
+        "hardness": 75,
+        "density": 2.70,
+        "modulus": 69.5,
+        "reverseFactor": 0.73,
+        "thermalConductivity": 180,
+        "strainHardeningExponent": 0.22,
+        "anisotropyRatio": 0.68,
+        "minimumBendRadius": 1.8,
+        "surfaceRoughness": 0.3,
+        "frictionCoefficient": 0.46
+      },
+      "warm": {
+        "tensileStrength": 220,
+        "yieldStrength": 110,
+        "shearStrength": 121,
+        "elongation": 30,
+        "strainHardeningExponent": 0.19,
+        "anisotropyRatio": 0.66,
+        "minimumBendRadius": 1.5,
+        "surfaceRoughness": 0.4,
+        "frictionCoefficient": 0.43
+      },
+      "hot": {
+        "tensileStrength": 180,
+        "yieldStrength": 90,
+        "shearStrength": 99,
+        "elongation": 35,
+        "strainHardeningExponent": 0.16,
+        "anisotropyRatio": 0.64,
+        "minimumBendRadius": 1.2,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.40
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Moderate",
+      "springback": "Moderate to High",
+      "minimumBendRadius": "1.2t",
+      "recommendedPunchSpeed": "75-200mm/s",
+      "temperatureRange": "20-250°C",
+      "recommendedDieClearance": "5.5%",
+      "lubricantType": "Medium viscosity oil",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "46% of diameter"
+    }
+  },
+  "aluminum_grade_6061t6": {
+    "name": "Aluminum 6061-T6",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 310,
+        "yieldStrength": 276,
+        "shearStrength": 171,
+        "elongation": 12,
+        "hardness": 95,
+        "density": 2.70,
+        "modulus": 68.9,
+        "reverseFactor": 0.72,
+        "thermalConductivity": 167,
+        "strainHardeningExponent": 0.05,
+        "anisotropyRatio": 0.6,
+        "minimumBendRadius": 3.0,
+        "surfaceRoughness": 0.8,
+        "frictionCoefficient": 0.47
+      },
+      "warm": {
+        "tensileStrength": 234,
+        "yieldStrength": 214,
+        "shearStrength": 129,
+        "elongation": 20,
+        "strainHardeningExponent": 0.04,
+        "anisotropyRatio": 0.58,
+        "minimumBendRadius": 2.8,
+        "surfaceRoughness": 1.0,
+        "frictionCoefficient": 0.45
+      },
+      "hot": {
+        "tensileStrength": 131,
+        "yieldStrength": 103,
+        "shearStrength": 72,
+        "elongation": 28,
+        "strainHardeningExponent": 0.03,
+        "anisotropyRatio": 0.55,
+        "minimumBendRadius": 2.5,
+        "surfaceRoughness": 1.2,
+        "frictionCoefficient": 0.42
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium",
+      "springback": "Medium-High",
+      "minimumBendRadius": "1.1t",
+      "recommendedPunchSpeed": "150-350mm/s",
+      "temperatureRange": "20-250°C",
+      "recommendedDieClearance": "6%",
+      "lubricantType": "Light oil or water-soluble",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "60% of diameter"
+    }
+  },
+  "aluminum_grade_6082t6": {
+    "name": "Aluminum 6082-T6 (Structural Automotive)",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 290,
+        "yieldStrength": 250,
+        "shearStrength": 160,
+        "elongation": 10,
+        "hardness": 95,
+        "density": 2.70,
+        "modulus": 70,
+        "reverseFactor": 0.72,
+        "thermalConductivity": 170,
+        "strainHardeningExponent": 0.07,
+        "anisotropyRatio": 0.65,
+        "minimumBendRadius": 3.0,
+        "surfaceRoughness": 0.7,
+        "frictionCoefficient": 0.47
+      },
+      "warm": {
+        "tensileStrength": 245,
+        "yieldStrength": 210,
+        "shearStrength": 135,
+        "elongation": 14,
+        "strainHardeningExponent": 0.06,
+        "anisotropyRatio": 0.63,
+        "minimumBendRadius": 2.7,
+        "surfaceRoughness": 0.8,
+        "frictionCoefficient": 0.45
+      },
+      "hot": {
+        "tensileStrength": 200,
+        "yieldStrength": 170,
+        "shearStrength": 110,
+        "elongation": 18,
+        "strainHardeningExponent": 0.05,
+        "anisotropyRatio": 0.60,
+        "minimumBendRadius": 2.4,
+        "surfaceRoughness": 1.0,
+        "frictionCoefficient": 0.42
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "High",
+      "springback": "High",
+      "minimumBendRadius": "3.0t",
+      "recommendedPunchSpeed": "100-250mm/s",
+      "temperatureRange": "20-300°C",
+      "recommendedDieClearance": "6%",
+      "lubricantType": "Medium to heavy oil",
+      "grainDirectionEffect": "Significant",
+      "maxFormingDepth": "52% of diameter"
+    }
+  },
+  "aluminum_grade_7050t7451": {
+    "name": "Aluminum 7050-T7451 (Aerospace Grade)",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 524,
+        "yieldStrength": 469,
+        "shearStrength": 288,
+        "elongation": 11,
+        "hardness": 140,
+        "density": 2.83,
+        "modulus": 71.7,
+        "reverseFactor": 0.75,
+        "thermalConductivity": 157,
+        "strainHardeningExponent": 0.09,
+        "anisotropyRatio": 0.56,
+        "minimumBendRadius": 4.5,
+        "surfaceRoughness": 0.8,
+        "frictionCoefficient": 0.48
+      },
+      "warm": {
+        "tensileStrength": 445,
+        "yieldStrength": 398,
+        "shearStrength": 245,
+        "elongation": 14,
+        "strainHardeningExponent": 0.07,
+        "anisotropyRatio": 0.54,
+        "minimumBendRadius": 4.2,
+        "surfaceRoughness": 1.0,
+        "frictionCoefficient": 0.46
+      },
+      "hot": {
+        "tensileStrength": 365,
+        "yieldStrength": 328,
+        "shearStrength": 201,
+        "elongation": 17,
+        "strainHardeningExponent": 0.05,
+        "anisotropyRatio": 0.51,
+        "minimumBendRadius": 3.8,
+        "surfaceRoughness": 1.2,
+        "frictionCoefficient": 0.43
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Very High",
+      "springback": "Very High",
+      "minimumBendRadius": "4.5t",
+      "recommendedPunchSpeed": "50-150mm/s",
+      "temperatureRange": "20-200°C",
+      "recommendedDieClearance": "8%",
+      "lubricantType": "Heavy-duty oil with EP additives",
+      "grainDirectionEffect": "Extremely Critical",
+      "maxFormingDepth": "45% of diameter"
+    }
+  },
+  "aluminum_grade_7075t6": {
+    "name": "Aluminum 7075-T6",
+    "category": "non-ferrous",
+    "properties": {
+      "room": {
+        "tensileStrength": 572,
+        "yieldStrength": 503,
+        "shearStrength": 315,
+        "elongation": 11,
+        "hardness": 150,
+        "density": 2.81,
+        "modulus": 71.7,
+        "reverseFactor": 0.73,
+        "thermalConductivity": 130,
+        "strainHardeningExponent": 0.07,
+        "anisotropyRatio": 0.54,
+        "minimumBendRadius": 5.0,
+        "surfaceRoughness": 1.0,
+        "frictionCoefficient": 0.49
+      },
+      "warm": {
+        "tensileStrength": 214,
+        "yieldStrength": 186,
+        "shearStrength": 118,
+        "elongation": 30,
+        "strainHardeningExponent": 0.06,
+        "anisotropyRatio": 0.52,
+        "minimumBendRadius": 4.7,
+        "surfaceRoughness": 1.2,
+        "frictionCoefficient": 0.47
+      },
+      "hot": {
+        "tensileStrength": 110,
+        "yieldStrength": 87,
+        "shearStrength": 61,
+        "elongation": 55,
+        "strainHardeningExponent": 0.05,
+        "anisotropyRatio": 0.49,
+        "minimumBendRadius": 4.3,
+        "surfaceRoughness": 1.4,
+        "frictionCoefficient": 0.44
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Very High",
+      "springback": "Very High",
+      "minimumBendRadius": "2.5t",
+      "recommendedPunchSpeed": "75-200mm/s",
+      "temperatureRange": "20-180°C",
+      "recommendedDieClearance": "7.5%",
+      "lubricantType": "Heavy-duty oil with additives",
+      "grainDirectionEffect": "Very Significant",
+      "maxFormingDepth": "45% of diameter"
+    }
+  },
+  "carbon_grade_a36": {
+    "name": "Steel A36 (Hot Rolled)",
+    "category": "carbon-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 475,
+        "yieldStrength": 250,
+        "shearStrength": 261,
+        "elongation": 23,
+        "hardness": 130,
+        "density": 7.80,
+        "modulus": 200,
+        "reverseFactor": 0.85,
+        "thermalConductivity": 52,
+        "strainHardeningExponent": 0.22,
+        "anisotropyRatio": 1.1,
+        "minimumBendRadius": 0.8,
+        "surfaceRoughness": 1.5,
+        "frictionCoefficient": 0.37
+      },
+      "warm": {
+        "tensileStrength": 350,
+        "yieldStrength": 220,
+        "shearStrength": 193,
+        "elongation": 23,
+        "strainHardeningExponent": 0.17,
+        "anisotropyRatio": 1.0,
+        "minimumBendRadius": 0.7,
+        "surfaceRoughness": 1.7,
+        "frictionCoefficient": 0.35
+      },
+      "hot": {
+        "tensileStrength": 285,
+        "yieldStrength": 180,
+        "shearStrength": 157,
+        "elongation": 26,
+        "strainHardeningExponent": 0.15,
+        "anisotropyRatio": 0.9,
+        "minimumBendRadius": 0.6,
+        "surfaceRoughness": 1.9,
+        "frictionCoefficient": 0.33
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium",
+      "springback": "Low",
+      "minimumBendRadius": "0.6t",
+      "recommendedPunchSpeed": "200-400mm/s",
+      "temperatureRange": "20-300°C",
+      "recommendedDieClearance": "6%",
+      "lubricantType": "Medium viscosity oil",
+      "grainDirectionEffect": "Mild",
+      "maxFormingDepth": "65% of diameter"
+    }
+  },
+  "carbon_grade_1018": {
+    "name": "Steel 1018 (Cold Rolled)",
+    "category": "carbon-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 440,
+        "yieldStrength": 370,
+        "shearStrength": 242,
+        "elongation": 15,
+        "hardness": 126,
+        "density": 7.87,
+        "modulus": 200,
+        "reverseFactor": 0.82,
+        "thermalConductivity": 51.9,
+        "strainHardeningExponent": 0.15,
+        "anisotropyRatio": 1.2,
+        "minimumBendRadius": 1.0,
+        "surfaceRoughness": 0.8,
+        "frictionCoefficient": 0.36
+      },
+      "warm": {
+        "tensileStrength": 380,
+        "yieldStrength": 320,
+        "shearStrength": 209,
+        "elongation": 18,
+        "strainHardeningExponent": 0.15,
+        "anisotropyRatio": 1.1,
+        "minimumBendRadius": 0.9,
+        "surfaceRoughness": 1.0,
+        "frictionCoefficient": 0.34
+      },
+      "hot": {
+        "tensileStrength": 310,
+        "yieldStrength": 260,
+        "shearStrength": 171,
+        "elongation": 22,
+        "strainHardeningExponent": 0.13,
+        "anisotropyRatio": 1.0,
+        "minimumBendRadius": 0.8,
+        "surfaceRoughness": 1.2,
+        "frictionCoefficient": 0.32
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium",
+      "springback": "Low-Medium",
+      "minimumBendRadius": "0.8t",
+      "recommendedPunchSpeed": "200-400mm/s",
+      "temperatureRange": "20-300°C",
+      "recommendedDieClearance": "6%",
+      "lubricantType": "Medium viscosity oil",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "60% of diameter"
+    }
+  },
+  "carbon_grade_1020": {
+    "name": "Steel 1020 (Cold Rolled)",
+    "category": "carbon-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 420,
+        "yieldStrength": 350,
+        "shearStrength": 231,
+        "elongation": 15,
+        "hardness": 121,
+        "density": 7.87,
+        "modulus": 200,
+        "reverseFactor": 0.82,
+        "thermalConductivity": 51.9,
+        "strainHardeningExponent": 0.15,
+        "anisotropyRatio": 1.0,
+        "minimumBendRadius": 1.0,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.35
+      },
+      "warm": {
+        "tensileStrength": 375,
+        "yieldStrength": 315,
+        "shearStrength": 206,
+        "elongation": 18,
+        "strainHardeningExponent": 0.17,
+        "anisotropyRatio": 0.98,
+        "minimumBendRadius": 0.8,
+        "surfaceRoughness": 0.7,
+        "frictionCoefficient": 0.38
+      },
+      "hot": {
+        "tensileStrength": 250,
+        "yieldStrength": 140,
+        "shearStrength": 138,
+        "elongation": 25,
+        "strainHardeningExponent": 0.15,
+        "anisotropyRatio": 0.95,
+        "minimumBendRadius": 0.6,
+        "surfaceRoughness": 0.9,
+        "frictionCoefficient": 0.40
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Moderate",
+      "springback": "Low",
+      "minimumBendRadius": "1.0t",
+      "recommendedPunchSpeed": "50-150mm/s",
+      "temperatureRange": "20-650°C",
+      "recommendedDieClearance": "6%",
+      "lubricantType": "General purpose stamping oil",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "60% of diameter"
+    }
+  },
+  "carbon_grade_1045": {
+    "name": "Steel 1045 (Cold Rolled)",
+    "category": "carbon-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 625,
+        "yieldStrength": 530,
+        "shearStrength": 344,
+        "elongation": 12,
+        "hardness": 179,
+        "density": 7.85,
+        "modulus": 200,
+        "reverseFactor": 0.85,
+        "thermalConductivity": 49.8,
+        "strainHardeningExponent": 0.15,
+        "anisotropyRatio": 1.3,
+        "minimumBendRadius": 1.5,
+        "surfaceRoughness": 1.0,
+        "frictionCoefficient": 0.38
+      },
+      "warm": {
+        "tensileStrength": 510,
+        "yieldStrength": 390,
+        "shearStrength": 281,
+        "elongation": 15,
+        "strainHardeningExponent": 0.13,
+        "anisotropyRatio": 1.2,
+        "minimumBendRadius": 1.3,
+        "surfaceRoughness": 1.2,
+        "frictionCoefficient": 0.36
+      },
+      "hot": {
+        "tensileStrength": 420,
+        "yieldStrength": 320,
+        "shearStrength": 231,
+        "elongation": 18,
+        "strainHardeningExponent": 0.11,
+        "anisotropyRatio": 1.1,
+        "minimumBendRadius": 1.1,
+        "surfaceRoughness": 1.4,
+        "frictionCoefficient": 0.34
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "High",
+      "springback": "Medium",
+      "minimumBendRadius": "1.0t",
+      "recommendedPunchSpeed": "150-350mm/s",
+      "temperatureRange": "20-320°C",
+      "recommendedDieClearance": "6.5%",
+      "lubricantType": "Heavy-duty oil",
+      "grainDirectionEffect": "Significant",
+      "maxFormingDepth": "55% of diameter"
+    }
+  },
+  "carbon_grade_1117": {
+    "name": "Steel 1117 (Free Machining)",
+    "category": "carbon-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 475,
+        "yieldStrength": 400,
+        "shearStrength": 261,
+        "elongation": 15,
+        "hardness": 137,
+        "density": 7.85,
+        "modulus": 200,
+        "reverseFactor": 0.82,
+        "thermalConductivity": 49.8,
+        "strainHardeningExponent": 0.16,
+        "anisotropyRatio": 1.2,
+        "minimumBendRadius": 1.2,
+        "surfaceRoughness": 0.8,
+        "frictionCoefficient": 0.36
+      },
+      "warm": {
+        "tensileStrength": 380,
+        "yieldStrength": 320,
+        "shearStrength": 209,
+        "elongation": 18,
+        "strainHardeningExponent": 0.14,
+        "anisotropyRatio": 1.1,
+        "minimumBendRadius": 1.1,
+        "surfaceRoughness": 1.0,
+        "frictionCoefficient": 0.34
+      },
+      "hot": {
+        "tensileStrength": 310,
+        "yieldStrength": 260,
+        "shearStrength": 171,
+        "elongation": 22,
+        "strainHardeningExponent": 0.12,
+        "anisotropyRatio": 1.0,
+        "minimumBendRadius": 1.0,
+        "surfaceRoughness": 1.2,
+        "frictionCoefficient": 0.32
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium",
+      "springback": "Low-Medium",
+      "minimumBendRadius": "1.2t",
+      "recommendedPunchSpeed": "200-400mm/s",
+      "temperatureRange": "20-300°C",
+      "recommendedDieClearance": "6%",
+      "lubricantType": "Medium viscosity oil",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "60% of diameter"
+    }
+  },
+  "alloy_grade_4130": {
+    "name": "Steel 4130 (Annealed)",
+    "category": "alloy-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 560,
+        "yieldStrength": 460,
+        "shearStrength": 308,
+        "elongation": 25.5,
+        "hardness": 217,
+        "density": 7.85,
+        "modulus": 200,
+        "reverseFactor": 0.85,
+        "thermalConductivity": 42.7,
+        "strainHardeningExponent": 0.15,
+        "anisotropyRatio": 1.3,
+        "minimumBendRadius": 1.2,
+        "surfaceRoughness": 0.9,
+        "frictionCoefficient": 0.38
+      },
+      "warm": {
+        "tensileStrength": 490,
+        "yieldStrength": 400,
+        "shearStrength": 270,
+        "elongation": 24,
+        "strainHardeningExponent": 0.13,
+        "anisotropyRatio": 1.2,
+        "minimumBendRadius": 1.1,
+        "surfaceRoughness": 1.1,
+        "frictionCoefficient": 0.36
+      },
+      "hot": {
+        "tensileStrength": 400,
+        "yieldStrength": 325,
+        "shearStrength": 220,
+        "elongation": 26,
+        "strainHardeningExponent": 0.11,
+        "anisotropyRatio": 1.1,
+        "minimumBendRadius": 1.0,
+        "surfaceRoughness": 1.3,
+        "frictionCoefficient": 0.34
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium-High",
+      "springback": "Medium",
+      "minimumBendRadius": "1.0t",
+      "recommendedPunchSpeed": "150-300mm/s",
+      "temperatureRange": "20-350°C",
+      "recommendedDieClearance": "6.5%",
+      "lubricantType": "Heavy-duty oil",
+      "grainDirectionEffect": "Significant",
+      "maxFormingDepth": "58% of diameter"
+    }
+  },
+  "alloy_grade_4140": {
+    "name": "Steel 4140 (Annealed)",
+    "category": "alloy-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 655,
+        "yieldStrength": 415,
+        "shearStrength": 360,
+        "elongation": 23.0,
+        "hardness": 197,
+        "density": 7.85,
+        "modulus": 200,
+        "reverseFactor": 0.87,
+        "thermalConductivity": 42.6,
+        "strainHardeningExponent": 0.14,
+        "anisotropyRatio": 1.4,
+        "minimumBendRadius": 1.4,
+        "surfaceRoughness": 1.0,
+        "frictionCoefficient": 0.39
+      },
+      "warm": {
+        "tensileStrength": 580,
+        "yieldStrength": 370,
+        "shearStrength": 319,
+        "elongation": 25,
+        "strainHardeningExponent": 0.12,
+        "anisotropyRatio": 1.3,
+        "minimumBendRadius": 1.3,
+        "surfaceRoughness": 1.2,
+        "frictionCoefficient": 0.37
+      },
+      "hot": {
+        "tensileStrength": 480,
+        "yieldStrength": 300,
+        "shearStrength": 264,
+        "elongation": 27,
+        "strainHardeningExponent": 0.10,
+        "anisotropyRatio": 1.2,
+        "minimumBendRadius": 1.2,
+        "surfaceRoughness": 1.4,
+        "frictionCoefficient": 0.35
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "High",
+      "springback": "Medium",
+      "minimumBendRadius": "1.2t",
+      "recommendedPunchSpeed": "150-300mm/s",
+      "temperatureRange": "20-350°C",
+      "recommendedDieClearance": "7%",
+      "lubricantType": "Heavy-duty oil with EP additives",
+      "grainDirectionEffect": "Very Significant",
+      "maxFormingDepth": "55% of diameter"
+    }
+  },
+  "alloy_grade_4340": {
+    "name": "Steel 4340 (High Strength)",
+    "category": "alloy-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 745,
+        "yieldStrength": 470,
+        "shearStrength": 410,
+        "elongation": 18,
+        "hardness": 217,
+        "density": 7.85,
+        "modulus": 200,
+        "reverseFactor": 0.88,
+        "thermalConductivity": 44.5,
+        "strainHardeningExponent": 0.15,
+        "anisotropyRatio": 1.4,
+        "minimumBendRadius": 2.0,
+        "surfaceRoughness": 0.8,
+        "frictionCoefficient": 0.39
+      },
+      "warm": {
+        "tensileStrength": 650,
+        "yieldStrength": 400,
+        "shearStrength": 358,
+        "elongation": 20,
+        "strainHardeningExponent": 0.13,
+        "anisotropyRatio": 1.3,
+        "minimumBendRadius": 1.8,
+        "surfaceRoughness": 1.0,
+        "frictionCoefficient": 0.37
+      },
+      "hot": {
+        "tensileStrength": 550,
+        "yieldStrength": 330,
+        "shearStrength": 303,
+        "elongation": 28,
+        "strainHardeningExponent": 0.11,
+        "anisotropyRatio": 1.2,
+        "minimumBendRadius": 1.6,
+        "surfaceRoughness": 1.2,
+        "frictionCoefficient": 0.35
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Very High",
+      "springback": "High",
+      "minimumBendRadius": "2.0t",
+      "recommendedPunchSpeed": "100-250mm/s",
+      "temperatureRange": "20-350°C",
+      "recommendedDieClearance": "7%",
+      "lubricantType": "Heavy-duty EP oil",
+      "grainDirectionEffect": "Significant",
+      "maxFormingDepth": "50% of diameter"
+    }
+  },
+  "alloy_grade_8620": {
+    "name": "Steel 8620 (Case Hardening)",
+    "category": "alloy-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 530,
+        "yieldStrength": 385,
+        "shearStrength": 292,
+        "elongation": 28,
+        "hardness": 149,
+        "density": 7.85,
+        "modulus": 200,
+        "reverseFactor": 0.84,
+        "thermalConductivity": 46.6,
+        "strainHardeningExponent": 0.15,
+        "anisotropyRatio": 1.3,
+        "minimumBendRadius": 1.4,
+        "surfaceRoughness": 0.7,
+        "frictionCoefficient": 0.37
+      },
+      "warm": {
+        "tensileStrength": 460,
+        "yieldStrength": 335,
+        "shearStrength": 253,
+        "elongation": 30,
+        "strainHardeningExponent": 0.16,
+        "anisotropyRatio": 1.2,
+        "minimumBendRadius": 1.2,
+        "surfaceRoughness": 0.9,
+        "frictionCoefficient": 0.35
+      },
+      "hot": {
+        "tensileStrength": 380,
+        "yieldStrength": 275,
+        "shearStrength": 209,
+        "elongation": 32,
+        "strainHardeningExponent": 0.14,
+        "anisotropyRatio": 1.1,
+        "minimumBendRadius": 1.0,
+        "surfaceRoughness": 1.1,
+        "frictionCoefficient": 0.33
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium-High",
+      "springback": "Medium",
+      "minimumBendRadius": "1.4t",
+      "recommendedPunchSpeed": "150-300mm/s",
+      "temperatureRange": "20-350°C",
+      "recommendedDieClearance": "6.5%",
+      "lubricantType": "Medium to heavy-duty oil",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "60% of diameter"
+    }
+  },
+  "stainless_grade_174ph": {
+    "name": "Stainless Steel 17-4PH",
+    "category": "stainless-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 1030,
+        "yieldStrength": 760,
+        "shearStrength": 567,
+        "elongation": 8.0,
+        "hardness": 320,
+        "density": 7.76,
+        "modulus": 200,
+        "reverseFactor": 0.90,
+        "thermalConductivity": 18.3,
+        "strainHardeningExponent": 0.25,
+        "anisotropyRatio": 1.2,
+        "minimumBendRadius": 2.5,
+        "surfaceRoughness": 0.8,
+        "frictionCoefficient": 0.45
+      },
+      "warm": {
+        "tensileStrength": 920,
+        "yieldStrength": 680,
+        "shearStrength": 506,
+        "elongation": 10,
+        "strainHardeningExponent": 0.23,
+        "anisotropyRatio": 1.15,
+        "minimumBendRadius": 2.2,
+        "surfaceRoughness": 1.0,
+        "frictionCoefficient": 0.43
+      },
+      "hot": {
+        "tensileStrength": 780,
+        "yieldStrength": 580,
+        "shearStrength": 429,
+        "elongation": 12,
+        "strainHardeningExponent": 0.20,
+        "anisotropyRatio": 1.1,
+        "minimumBendRadius": 1.9,
+        "surfaceRoughness": 1.2,
+        "frictionCoefficient": 0.40
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Very High",
+      "springback": "Very High",
+      "minimumBendRadius": "2.5t",
+      "recommendedPunchSpeed": "50-150mm/s",
+      "temperatureRange": "20-450°C",
+      "recommendedDieClearance": "8%",
+      "lubricantType": "Heavy-duty EP with MoS2",
+      "grainDirectionEffect": "Very Significant",
+      "maxFormingDepth": "40% of diameter"
+    }
+  },
+  "stainless_grade_303": {
+    "name": "Stainless Steel 303 (Free Machining)",
+    "category": "stainless-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 621,
+        "yieldStrength": 241,
+        "shearStrength": 342,
+        "elongation": 45,
+        "hardness": 160,
+        "density": 7.83,
+        "modulus": 200,
+        "reverseFactor": 0.88,
+        "thermalConductivity": 16.2,
+        "strainHardeningExponent": 0.30,
+        "anisotropyRatio": 0.94,
+        "minimumBendRadius": 1.2,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.43
+      },
+      "warm": {
+        "tensileStrength": 530,
+        "yieldStrength": 205,
+        "shearStrength": 292,
+        "elongation": 48,
+        "strainHardeningExponent": 0.28,
+        "anisotropyRatio": 0.92,
+        "minimumBendRadius": 1.1,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.41
+      },
+      "hot": {
+        "tensileStrength": 440,
+        "yieldStrength": 170,
+        "shearStrength": 242,
+        "elongation": 50,
+        "strainHardeningExponent": 0.25,
+        "anisotropyRatio": 0.90,
+        "minimumBendRadius": 1.0,
+        "surfaceRoughness": 0.7,
+        "frictionCoefficient": 0.38
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "High",
+      "springback": "High",
+      "minimumBendRadius": "1.2t",
+      "recommendedPunchSpeed": "50-150mm/s",
+      "temperatureRange": "20-400°C",
+      "recommendedDieClearance": "7%",
+      "lubricantType": "Chlorinated oils or heavy-duty",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "65% of diameter"
+    }
+  },
+  "stainless_grade_304": {
+    "name": "Stainless Steel 304",
+    "category": "stainless-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 621,
+        "yieldStrength": 290,
+        "shearStrength": 342,
+        "elongation": 50,
+        "hardness": 82,
+        "density": 8.03,
+        "modulus": 200,
+        "reverseFactor": 0.90,
+        "thermalConductivity": 16.2,
+        "strainHardeningExponent": 0.35,
+        "anisotropyRatio": 0.95,
+        "minimumBendRadius": 1.0,
+        "surfaceRoughness": 0.4,
+        "frictionCoefficient": 0.42
+      },
+      "warm": {
+        "tensileStrength": 520,
+        "yieldStrength": 245,
+        "shearStrength": 286,
+        "elongation": 52,
+        "strainHardeningExponent": 0.32,
+        "anisotropyRatio": 0.93,
+        "minimumBendRadius": 0.9,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.40
+      },
+      "hot": {
+        "tensileStrength": 420,
+        "yieldStrength": 200,
+        "shearStrength": 231,
+        "elongation": 54,
+        "strainHardeningExponent": 0.29,
+        "anisotropyRatio": 0.90,
+        "minimumBendRadius": 0.8,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.38
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "High",
+      "springback": "High",
+      "minimumBendRadius": "1t",
+      "recommendedPunchSpeed": "50-150mm/s",
+      "temperatureRange": "20-400°C",
+      "recommendedDieClearance": "7.5%",
+      "lubricantType": "Chlorinated oils or heavy-duty",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "65% of diameter"
+    }
+  },
+  "stainless_grade_316l": {
+    "name": "Stainless Steel 316L",
+    "category": "stainless-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 558,
+        "yieldStrength": 290,
+        "shearStrength": 307,
+        "elongation": 45,
+        "hardness": 79,
+        "density": 7.99,
+        "modulus": 200,
+        "reverseFactor": 0.90,
+        "thermalConductivity": 16.2,
+        "strainHardeningExponent": 0.36,
+        "anisotropyRatio": 0.96,
+        "minimumBendRadius": 1.1,
+        "surfaceRoughness": 0.4,
+        "frictionCoefficient": 0.43
+      },
+      "warm": {
+        "tensileStrength": 495,
+        "yieldStrength": 255,
+        "shearStrength": 272,
+        "elongation": 48,
+        "strainHardeningExponent": 0.33,
+        "anisotropyRatio": 0.94,
+        "minimumBendRadius": 1.0,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.41
+      },
+      "hot": {
+        "tensileStrength": 405,
+        "yieldStrength": 210,
+        "shearStrength": 223,
+        "elongation": 50,
+        "strainHardeningExponent": 0.30,
+        "anisotropyRatio": 0.92,
+        "minimumBendRadius": 0.9,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.39
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "High",
+      "springback": "High",
+      "minimumBendRadius": "1.1t",
+      "recommendedPunchSpeed": "50-150mm/s",
+      "temperatureRange": "20-400°C",
+      "recommendedDieClearance": "7.5%",
+      "lubricantType": "Chlorinated oils or heavy-duty with EP",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "67% of diameter"
+    }
+  },
+  "stainless_grade_430": {
+    "name": "Stainless Steel 430 (Ferritic)",
+    "category": "stainless-steel",
+    "properties": {
+      "room": {
+        "tensileStrength": 497,
+        "yieldStrength": 334,
+        "shearStrength": 273,
+        "elongation": 25,
+        "hardness": 79,
+        "density": 7.70,
+        "modulus": 200,
+        "reverseFactor": 0.85,
+        "thermalConductivity": 23.86,
+        "strainHardeningExponent": 0.22,
+        "anisotropyRatio": 1.6,
+        "minimumBendRadius": 1.5,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.40
+      },
+      "warm": {
+        "tensileStrength": 420,
+        "yieldStrength": 285,
+        "shearStrength": 231,
+        "elongation": 27,
+        "strainHardeningExponent": 0.20,
+        "anisotropyRatio": 1.5,
+        "minimumBendRadius": 1.3,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.38
+      },
+      "hot": {
+        "tensileStrength": 340,
+        "yieldStrength": 230,
+        "shearStrength": 187,
+        "elongation": 29,
+        "strainHardeningExponent": 0.18,
+        "anisotropyRatio": 1.4,
+        "minimumBendRadius": 1.1,
+        "surfaceRoughness": 0.7,
+        "frictionCoefficient": 0.36
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium-High",
+      "springback": "Medium",
+      "minimumBendRadius": "1.5t",
+      "recommendedPunchSpeed": "100-250mm/s",
+      "temperatureRange": "20-400°C",
+      "recommendedDieClearance": "6.5%",
+      "lubricantType": "Medium to heavy-duty oil",
+      "grainDirectionEffect": "Very Significant",
+      "maxFormingDepth": "60% of diameter"
+    }
+  },
+  "copper_grade_c110": {
+    "name": "Copper C110 (ETP)",
+    "category": "copper",
+    "properties": {
+      "room": {
+        "tensileStrength": 221,
+        "yieldStrength": 65.5,
+        "shearStrength": 122,
+        "elongation": 35,
+        "hardness": 44,
+        "density": 8.91,
+        "modulus": 117,
+        "reverseFactor": 0.72,
+        "thermalConductivity": 390.8,
+        "strainHardeningExponent": 0.28,
+        "anisotropyRatio": 0.80,
+        "minimumBendRadius": 0.4,
+        "surfaceRoughness": 0.2,
+        "frictionCoefficient": 0.29
+      },
+      "warm": {
+        "tensileStrength": 185,
+        "yieldStrength": 55,
+        "shearStrength": 102,
+        "elongation": 40,
+        "strainHardeningExponent": 0.25,
+        "anisotropyRatio": 0.78,
+        "minimumBendRadius": 0.3,
+        "surfaceRoughness": 0.3,
+        "frictionCoefficient": 0.27
+      },
+      "hot": {
+        "tensileStrength": 145,
+        "yieldStrength": 41.4,
+        "shearStrength": 80,
+        "elongation": 45,
+        "strainHardeningExponent": 0.22,
+        "anisotropyRatio": 0.75,
+        "minimumBendRadius": 0.2,
+        "surfaceRoughness": 0.4,
+        "frictionCoefficient": 0.25
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Low",
+      "springback": "Low",
+      "minimumBendRadius": "0.6t",
+      "recommendedPunchSpeed": "150-300mm/s",
+      "temperatureRange": "20-250°C",
+      "recommendedDieClearance": "4.5%",
+      "lubricantType": "Light oil or emulsion",
+      "grainDirectionEffect": "Mild",
+      "maxFormingDepth": "75% of diameter"
+    }
+  },
+  "brass_grade_c230": {
+    "name": "Brass C230 (Red Brass)",
+    "category": "brass",
+    "properties": {
+      "room": {
+        "tensileStrength": 297,
+        "yieldStrength": 93,
+        "shearStrength": 163,
+        "elongation": 45.5,
+        "hardness": 30,
+        "density": 8.75,
+        "modulus": 117,
+        "reverseFactor": 0.75,
+        "thermalConductivity": 159.1,
+        "strainHardeningExponent": 0.32,
+        "anisotropyRatio": 0.86,
+        "minimumBendRadius": 0.7,
+        "surfaceRoughness": 0.3,
+        "frictionCoefficient": 0.31
+      },
+      "warm": {
+        "tensileStrength": 255,
+        "yieldStrength": 80,
+        "shearStrength": 140,
+        "elongation": 50,
+        "strainHardeningExponent": 0.29,
+        "anisotropyRatio": 0.84,
+        "minimumBendRadius": 0.6,
+        "surfaceRoughness": 0.4,
+        "frictionCoefficient": 0.29
+      },
+      "hot": {
+        "tensileStrength": 210,
+        "yieldStrength": 65,
+        "shearStrength": 116,
+        "elongation": 54,
+        "strainHardeningExponent": 0.26,
+        "anisotropyRatio": 0.82,
+        "minimumBendRadius": 0.5,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.27
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium",
+      "springback": "Low",
+      "minimumBendRadius": "0.7t",
+      "recommendedPunchSpeed": "150-300mm/s",
+      "temperatureRange": "20-350°C",
+      "recommendedDieClearance": "5%",
+      "lubricantType": "Light to medium oil",
+      "grainDirectionEffect": "Mild",
+      "maxFormingDepth": "72% of diameter"
+    }
+  },
+  "brass_grade_c260": {
+    "name": "Brass C260 (Cartridge Brass)",
+    "category": "brass",
+    "properties": {
+      "room": {
+        "tensileStrength": 366,
+        "yieldStrength": 148,
+        "shearStrength": 201,
+        "elongation": 53.5,
+        "hardness": 38,
+        "density": 8.53,
+        "modulus": 110,
+        "reverseFactor": 0.76,
+        "thermalConductivity": 121,
+        "strainHardeningExponent": 0.35,
+        "anisotropyRatio": 0.85,
+        "minimumBendRadius": 0.6,
+        "surfaceRoughness": 0.3,
+        "frictionCoefficient": 0.32
+      },
+      "warm": {
+        "tensileStrength": 310,
+        "yieldStrength": 125,
+        "shearStrength": 171,
+        "elongation": 58,
+        "strainHardeningExponent": 0.32,
+        "anisotropyRatio": 0.83,
+        "minimumBendRadius": 0.5,
+        "surfaceRoughness": 0.4,
+        "frictionCoefficient": 0.30
+      },
+      "hot": {
+        "tensileStrength": 250,
+        "yieldStrength": 100,
+        "shearStrength": 138,
+        "elongation": 63,
+        "strainHardeningExponent": 0.29,
+        "anisotropyRatio": 0.80,
+        "minimumBendRadius": 0.4,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.28
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Medium",
+      "springback": "Medium",
+      "minimumBendRadius": "0.8t",
+      "recommendedPunchSpeed": "100-250mm/s",
+      "temperatureRange": "20-300°C",
+      "recommendedDieClearance": "5%",
+      "lubricantType": "Medium oil or emulsion",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "70% of diameter"
+    }
+  },
+  "titanium_grade_5": {
+    "name": "Titanium 5 (Ti-6Al-4V)",
+    "category": "titanium",
+    "properties": {
+      "room": {
+        "tensileStrength": 895,
+        "yieldStrength": 828,
+        "shearStrength": 492,
+        "elongation": 10,
+        "hardness": 35,
+        "density": 4.43,
+        "modulus": 114,
+        "reverseFactor": 0.85,
+        "thermalConductivity": 6.7,
+        "strainHardeningExponent": 0.07,
+        "anisotropyRatio": 1.8,
+        "minimumBendRadius": 3.0,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.41
+      },
+      "warm": {
+        "tensileStrength": 760,
+        "yieldStrength": 705,
+        "shearStrength": 418,
+        "elongation": 12,
+        "strainHardeningExponent": 0.06,
+        "anisotropyRatio": 1.7,
+        "minimumBendRadius": 2.7,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.39
+      },
+      "hot": {
+        "tensileStrength": 625,
+        "yieldStrength": 580,
+        "shearStrength": 344,
+        "elongation": 15,
+        "strainHardeningExponent": 0.05,
+        "anisotropyRatio": 1.6,
+        "minimumBendRadius": 2.4,
+        "surfaceRoughness": 0.7,
+        "frictionCoefficient": 0.36
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Very High",
+      "springback": "Severe",
+      "minimumBendRadius": "3.0t",
+      "recommendedPunchSpeed": "25-100mm/s",
+      "temperatureRange": "20-600°C",
+      "recommendedDieClearance": "8%",
+      "lubricantType": "Special titanium lubricant with EP and MoS2",
+      "grainDirectionEffect": "Extremely Critical",
+      "maxFormingDepth": "45% of diameter"
+    }
+  },
+  "titanium_grade_5eli": {
+    "name": "Titanium 5 ELI (Ti-6Al-4V ELI)",
+    "category": "titanium",
+    "properties": {
+      "room": {
+        "tensileStrength": 828,
+        "yieldStrength": 759,
+        "shearStrength": 455,
+        "elongation": 10,
+        "hardness": 30,
+        "density": 4.43,
+        "modulus": 114,
+        "reverseFactor": 0.83,
+        "thermalConductivity": 6.7,
+        "strainHardeningExponent": 0.06,
+        "anisotropyRatio": 1.7,
+        "minimumBendRadius": 3.0,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.42
+      },
+      "warm": {
+        "tensileStrength": 700,
+        "yieldStrength": 645,
+        "shearStrength": 385,
+        "elongation": 12,
+        "strainHardeningExponent": 0.05,
+        "anisotropyRatio": 1.6,
+        "minimumBendRadius": 2.7,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.40
+      },
+      "hot": {
+        "tensileStrength": 580,
+        "yieldStrength": 530,
+        "shearStrength": 319,
+        "elongation": 15,
+        "strainHardeningExponent": 0.04,
+        "anisotropyRatio": 1.5,
+        "minimumBendRadius": 2.4,
+        "surfaceRoughness": 0.7,
+        "frictionCoefficient": 0.37
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Very High",
+      "springback": "Severe",
+      "minimumBendRadius": "3.0t",
+      "recommendedPunchSpeed": "25-100mm/s",
+      "temperatureRange": "20-600°C",
+      "recommendedDieClearance": "8%",
+      "lubricantType": "Special titanium lubricant with EP and MoS2",
+      "grainDirectionEffect": "Extremely Critical",
+      "maxFormingDepth": "45% of diameter"
+    }
+  },
+  "titanium_grade_9": {
+    "name": "Titanium 9 (Ti-3Al-2.5V)",
+    "category": "titanium",
+    "properties": {
+      "room": {
+        "tensileStrength": 760,
+        "yieldStrength": 655,
+        "shearStrength": 418,
+        "elongation": 15,
+        "hardness": 25,
+        "density": 4.59,
+        "modulus": 100,
+        "reverseFactor": 0.80,
+        "thermalConductivity": 8.3,
+        "strainHardeningExponent": 0.08,
+        "anisotropyRatio": 1.6,
+        "minimumBendRadius": 2.2,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.39
+      },
+      "warm": {
+        "tensileStrength": 645,
+        "yieldStrength": 555,
+        "shearStrength": 355,
+        "elongation": 18,
+        "strainHardeningExponent": 0.07,
+        "anisotropyRatio": 1.5,
+        "minimumBendRadius": 2.0,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.37
+      },
+      "hot": {
+        "tensileStrength": 530,
+        "yieldStrength": 455,
+        "shearStrength": 292,
+        "elongation": 22,
+        "strainHardeningExponent": 0.06,
+        "anisotropyRatio": 1.4,
+        "minimumBendRadius": 1.8,
+        "surfaceRoughness": 0.7,
+        "frictionCoefficient": 0.35
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "High",
+      "springback": "High",
+      "minimumBendRadius": "2.2t",
+      "recommendedPunchSpeed": "40-150mm/s",
+      "temperatureRange": "20-550°C",
+      "recommendedDieClearance": "7.5%",
+      "lubricantType": "Special titanium lubricant with MoS2",
+      "grainDirectionEffect": "Very Significant",
+      "maxFormingDepth": "55% of diameter"
+    }
+  },
+  "nickel_grade_600": {
+    "name": "Nickel 600 (Inconel)",
+    "category": "nickel-alloy",
+    "properties": {
+      "room": {
+        "tensileStrength": 640,
+        "yieldStrength": 255,
+        "shearStrength": 352,
+        "elongation": 45,
+        "hardness": 80,
+        "density": 8.42,
+        "modulus": 207,
+        "reverseFactor": 0.82,
+        "thermalConductivity": 14.8,
+        "strainHardeningExponent": 0.21,
+        "anisotropyRatio": 0.97,
+        "minimumBendRadius": 1.6,
+        "surfaceRoughness": 0.4,
+        "frictionCoefficient": 0.43
+      },
+      "warm": {
+        "tensileStrength": 545,
+        "yieldStrength": 217,
+        "shearStrength": 300,
+        "elongation": 50,
+        "strainHardeningExponent": 0.19,
+        "anisotropyRatio": 0.95,
+        "minimumBendRadius": 1.4,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.41
+      },
+      "hot": {
+        "tensileStrength": 450,
+        "yieldStrength": 180,
+        "shearStrength": 248,
+        "elongation": 55,
+        "strainHardeningExponent": 0.17,
+        "anisotropyRatio": 0.93,
+        "minimumBendRadius": 1.2,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.38
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "High",
+      "springback": "High",
+      "minimumBendRadius": "1.6t",
+      "recommendedPunchSpeed": "50-175mm/s",
+      "temperatureRange": "20-650°C",
+      "recommendedDieClearance": "7%",
+      "lubricantType": "High-temperature EP with MoS2",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "60% of diameter"
+    }
+  },
+  "nickel_grade_625": {
+    "name": "Nickel 625 (Inconel)",
+    "category": "nickel-alloy",
+    "properties": {
+      "room": {
+        "tensileStrength": 827,
+        "yieldStrength": 414,
+        "shearStrength": 455,
+        "elongation": 45,
+        "hardness": 95,
+        "density": 8.44,
+        "modulus": 208,
+        "reverseFactor": 0.85,
+        "thermalConductivity": 9.8,
+        "strainHardeningExponent": 0.23,
+        "anisotropyRatio": 1.0,
+        "minimumBendRadius": 1.8,
+        "surfaceRoughness": 0.4,
+        "frictionCoefficient": 0.45
+      },
+      "warm": {
+        "tensileStrength": 700,
+        "yieldStrength": 350,
+        "shearStrength": 385,
+        "elongation": 48,
+        "strainHardeningExponent": 0.21,
+        "anisotropyRatio": 0.98,
+        "minimumBendRadius": 1.6,
+        "surfaceRoughness": 0.5,
+        "frictionCoefficient": 0.42
+      },
+      "hot": {
+        "tensileStrength": 580,
+        "yieldStrength": 290,
+        "shearStrength": 319,
+        "elongation": 52,
+        "strainHardeningExponent": 0.19,
+        "anisotropyRatio": 0.95,
+        "minimumBendRadius": 1.4,
+        "surfaceRoughness": 0.6,
+        "frictionCoefficient": 0.39
+      }
+    },
+    "formingCharacteristics": {
+      "blankHoldingForce": "Very High",
+      "springback": "High",
+      "minimumBendRadius": "2.0t",
+      "recommendedPunchSpeed": "50-150mm/s",
+      "temperatureRange": "20-600°C",
+      "recommendedDieClearance": "7.5%",
+      "lubricantType": "High-temperature EP with MoS2",
+      "grainDirectionEffect": "Moderate",
+      "maxFormingDepth": "55% of diameter"
+    }
+  }
+}
