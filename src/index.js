@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { store, persistor } from './store';
+import { store, persistor } from './store/store';
 import theme from './theme';
 import App from './App';
 import './index.css';
