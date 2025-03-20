@@ -4,7 +4,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchMaterials = createAsyncThunk(
   'materials/fetchMaterials',
   async () => {
-    const response = await fetch('/data/materials.JSON');
+    // Get the base URL for GitHub Pages deployment
+    const basePath = process.env.PUBLIC_URL || '';
+    const response = await fetch(`${basePath}/data/materials.JSON`);
     if (!response.ok) {
       throw new Error('Failed to fetch materials');
     }
