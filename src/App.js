@@ -25,6 +25,7 @@ import SavedCalculationsPanel from './components/saved/SavedCalculationsPanel';
 import BatchQuantityInput from './components/inputs/BatchQuantityInput';
 import ColorModeToggle from './components/common/ColorModeToggle';
 import CalculationProgress from './components/common/CalculationProgress';
+import Logo from './components/common/Logo';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -89,14 +90,7 @@ const App = () => {
           borderBottomWidth="1px" 
           borderColor={borderColor}
         >
-          <Heading 
-            as="h1" 
-            fontSize={["xl", "2xl"]} 
-            color="primary.500"
-            fontWeight="bold"
-          >
-            Sutherland Presses Tonnage Calculator
-          </Heading>
+          <Logo height="50px" />
           
           <Flex align="center" gap={4}>
             <UnitToggle />
