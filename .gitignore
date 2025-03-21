@@ -32,4 +32,4 @@ yarn-error.log*
 
 # IDE files
 *.sublime-workspace
-*.sublime-project 
+*.sublime-project
