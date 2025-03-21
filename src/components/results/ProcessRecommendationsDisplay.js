@@ -34,7 +34,19 @@ const ProcessRecommendationsDisplay = () => {
   };
   
   // Generate recommendations based on selected operation type
-  const recommendations = generateProcessRecommendations(material, selectedOperation);
+  const recommendations = generateProcessRecommendations(material, selectedOperation) || {
+    title: 'Process Recommendations', 
+    description: 'No specific recommendations available for this material and operation.',
+    dieClearance: 'N/A',
+    punchSpeed: 'N/A',
+    blankHoldingForce: 'N/A',
+    lubricantType: 'N/A',
+    temperatureRange: 'N/A',
+    maxFormingDepth: 'N/A',
+    grainDirectionEffect: 'N/A',
+    specific: {},
+    efficiencyImprovement: '10-15%'
+  };
   
   if (!recommendations) {
     return null;
@@ -51,7 +63,7 @@ const ProcessRecommendationsDisplay = () => {
   return (
     <CardContainer title={recommendations.title || 'Process Recommendations'}>
       <Text fontSize="sm" color={labelColor} mb={4}>
-        {recommendations.description}
+        {recommendations.description || 'Analyze process parameters for optimal performance.'}
       </Text>
       
       <Box mb={4}>
@@ -76,32 +88,32 @@ const ProcessRecommendationsDisplay = () => {
           <Grid templateColumns={["1fr", null, "1fr 1fr", "repeat(3, 1fr)"]} gap={3} mb={3}>
             <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
               <Text fontSize="xs" color={labelColor} mb={1}>Die Clearance</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.dieClearance}</Text>
+              <Text fontSize="sm" fontWeight="medium">{recommendations.dieClearance || 'N/A'}</Text>
             </Box>
             
             <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
               <Text fontSize="xs" color={labelColor} mb={1}>Punch Speed</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.punchSpeed}</Text>
+              <Text fontSize="sm" fontWeight="medium">{recommendations.punchSpeed || 'N/A'}</Text>
             </Box>
             
             <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
               <Text fontSize="xs" color={labelColor} mb={1}>Blank Holding Force</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.blankHoldingForce}</Text>
+              <Text fontSize="sm" fontWeight="medium">{recommendations.blankHoldingForce || 'N/A'}</Text>
             </Box>
             
             <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
               <Text fontSize="xs" color={labelColor} mb={1}>Lubricant Type</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.lubricantType}</Text>
+              <Text fontSize="sm" fontWeight="medium">{recommendations.lubricantType || 'N/A'}</Text>
             </Box>
             
             <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
               <Text fontSize="xs" color={labelColor} mb={1}>Temperature Range</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.temperatureRange}</Text>
+              <Text fontSize="sm" fontWeight="medium">{recommendations.temperatureRange || 'N/A'}</Text>
             </Box>
             
             <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
               <Text fontSize="xs" color={labelColor} mb={1}>Maximum Forming Depth</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.maxFormingDepth}</Text>
+              <Text fontSize="sm" fontWeight="medium">{recommendations.maxFormingDepth || 'N/A'}</Text>
             </Box>
           </Grid>
           
@@ -120,7 +132,7 @@ const ProcessRecommendationsDisplay = () => {
           <Grid templateColumns={["1fr", null, "1fr 1fr", "repeat(3, 1fr)"]} gap={3}>
             <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
               <Text fontSize="xs" color={labelColor} mb={1}>Grain Direction Effect</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.grainDirectionEffect}</Text>
+              <Text fontSize="sm" fontWeight="medium">{recommendations.grainDirectionEffect || 'N/A'}</Text>
             </Box>
             
             {recommendations.specific && Object.entries(recommendations.specific)
@@ -131,7 +143,7 @@ const ProcessRecommendationsDisplay = () => {
                   <Text fontSize="xs" color={labelColor} mb={1}>
                     {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
                   </Text>
-                  <Text fontSize="sm" fontWeight="medium">{value}</Text>
+                  <Text fontSize="sm" fontWeight="medium">{value || 'N/A'}</Text>
                 </Box>
               ))
             }

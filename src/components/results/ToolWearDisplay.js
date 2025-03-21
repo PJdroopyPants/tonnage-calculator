@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
   Box,
@@ -55,33 +55,36 @@ const ToolWearDisplay = () => {
   };
 
   // This would be the result of calling the calculateToolWear function
-  const wearData = calculateToolWear(material, selectedOperation, toolMaterial);
-  
-  // Prepare comparison data for the chart
-  const wearComparisonData = [
-    { name: 'Actual Tool', value: wearData.wearRate, fill: '#0088fe' },
-    { name: 'Industry Benchmark', value: wearData.benchmarkWearRate, fill: '#00c49f' }
-  ];
+  const wearData = calculateToolWear(material, selectedOperation, toolMaterial) || {
+    wearRate: 0,
+    benchmarkWearRate: 0,
+    relativeToBenchmark: 1,
+    wearSeverity: 'Medium',
+    primaryWearCause: 'No data available',
+    maxWearAllowed: 100,
+    hitsPerPart: 1,
+    recommendations: []
+  };
   
   // Format for wear rate display
   const formatWearRate = (rate) => {
-    if (rate < 0.01) return '<0.01 μm/stroke';
+    if (!rate || rate < 0.01) return '<0.01 μm/stroke';
     return `${rate.toFixed(2)} μm/stroke`;
   };
   
   // Calculate tool life in strokes and parts
   const toolLife = {
-    strokes: Math.round(wearData.maxWearAllowed / wearData.wearRate),
-    parts: Math.round((wearData.maxWearAllowed / wearData.wearRate) / (wearData.hitsPerPart || 1))
+    strokes: Math.round((wearData.maxWearAllowed || 100) / (wearData.wearRate || 1)),
+    parts: Math.round(((wearData.maxWearAllowed || 100) / (wearData.wearRate || 1)) / (wearData.hitsPerPart || 1))
   };
   
   // Parts per resharpening calculation
-  const partsPerResharpening = Math.round(toolLife.parts);
+  const partsPerResharpening = Math.round(toolLife.parts || 0);
   
   // Calculate maintenance cycle based on production rate
   const maintenanceCycle = {
-    days: Math.round((partsPerResharpening / productionRate) * 10) / 10,
-    hours: Math.round((partsPerResharpening / (productionRate / 8)) * 10) / 10
+    days: Math.round(((partsPerResharpening || 0) / (productionRate || 1000)) * 10) / 10,
+    hours: Math.round(((partsPerResharpening || 0) / ((productionRate || 1000) / 8)) * 10) / 10
   };
 
   return (
@@ -162,7 +165,7 @@ const ToolWearDisplay = () => {
       
       <VStack spacing={6} align="stretch">
         {/* Tool Wear Summary Box */}
-        <Box p={4} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderColor={wearData.wearSeverity === 'Low' ? 'green.500' : wearData.wearSeverity === 'Medium' ? 'yellow.500' : 'red.500'}>
+        <Box p={4} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderColor={(wearData.wearSeverity || '') === 'Low' ? 'green.500' : (wearData.wearSeverity || '') === 'Medium' ? 'yellow.500' : 'red.500'}>
           <Text fontSize="sm" fontWeight="medium" mb={3}>
             Tool Wear Summary
           </Text>
@@ -170,7 +173,7 @@ const ToolWearDisplay = () => {
           <Grid templateColumns={["1fr", null, "repeat(2, 1fr)", "repeat(4, 1fr)"]} gap={3}>
             <Box>
               <Text fontSize="xs" color={labelColor} mb={1}>Wear Rate:</Text>
-              <Text fontSize="sm" fontWeight="medium">{formatWearRate(wearData.wearRate)}</Text>
+              <Text fontSize="sm" fontWeight="medium">{formatWearRate(wearData.wearRate || 0)}</Text>
             </Box>
             
             <Box>
@@ -178,11 +181,11 @@ const ToolWearDisplay = () => {
               <Text 
                 fontSize="sm" 
                 fontWeight="medium" 
-                color={wearData.relativeToBenchmark < 1 ? "green.500" : "red.500"}
+                color={(wearData.relativeToBenchmark || 1) < 1 ? "green.500" : "red.500"}
               >
-                {wearData.relativeToBenchmark < 1 
-                  ? `${Math.round((1 - wearData.relativeToBenchmark) * 100)}% Better` 
-                  : `${Math.round((wearData.relativeToBenchmark - 1) * 100)}% Worse`}
+                {(wearData.relativeToBenchmark || 1) < 1 
+                  ? `${Math.round((1 - (wearData.relativeToBenchmark || 1)) * 100)}% Better` 
+                  : `${Math.round(((wearData.relativeToBenchmark || 1) - 1) * 100)}% Worse`}
               </Text>
             </Box>
             
@@ -191,16 +194,16 @@ const ToolWearDisplay = () => {
               <Text 
                 fontSize="sm" 
                 fontWeight="medium" 
-                color={wearData.wearSeverity === 'Low' ? "green.500" : 
-                       wearData.wearSeverity === 'Medium' ? "yellow.500" : "red.500"}
+                color={(wearData.wearSeverity || '') === 'Low' ? "green.500" : 
+                       (wearData.wearSeverity || '') === 'Medium' ? "yellow.500" : "red.500"}
               >
-                {wearData.wearSeverity}
+                {wearData.wearSeverity || 'Medium'}
               </Text>
             </Box>
             
             <Box>
               <Text fontSize="xs" color={labelColor} mb={1}>Primary Cause:</Text>
-              <Text fontSize="sm" fontWeight="medium">{wearData.primaryWearCause}</Text>
+              <Text fontSize="sm" fontWeight="medium">{wearData.primaryWearCause || 'Unknown'}</Text>
             </Box>
           </Grid>
         </Box>
@@ -215,10 +218,10 @@ const ToolWearDisplay = () => {
             <Box>
               <Text fontSize="xs" color={labelColor} mb={1}>Resharpening Interval:</Text>
               <Text fontSize="lg" fontWeight="bold" color="blue.500">
-                {partsPerResharpening.toLocaleString()} parts
+                {(partsPerResharpening || 0).toLocaleString()} parts
               </Text>
               <Text fontSize="xs" color={labelColor} mt={1}>
-                Approx. {toolLife.strokes.toLocaleString()} strokes
+                Approx. {(toolLife.strokes || 0).toLocaleString()} strokes
               </Text>
             </Box>
             
@@ -237,15 +240,15 @@ const ToolWearDisplay = () => {
               <Text 
                 fontSize="lg" 
                 fontWeight="bold" 
-                color={partsPerResharpening >= batchQuantity ? "green.500" : "red.500"}
+                color={(partsPerResharpening || 0) >= batchQuantity ? "green.500" : "red.500"}
               >
-                {partsPerResharpening >= batchQuantity 
-                  ? Math.floor(partsPerResharpening / batchQuantity) 
-                  : Math.round((partsPerResharpening / batchQuantity) * 100) / 100}
-                {partsPerResharpening >= batchQuantity ? ' batches' : ' batch'}
+                {(partsPerResharpening || 0) >= batchQuantity 
+                  ? Math.floor((partsPerResharpening || 0) / batchQuantity) 
+                  : Math.round(((partsPerResharpening || 0) / batchQuantity) * 100) / 100}
+                {(partsPerResharpening || 0) >= batchQuantity ? ' batches' : ' batch'}
               </Text>
               <Text fontSize="xs" color={labelColor} mt={1}>
-                {partsPerResharpening >= batchQuantity 
+                {(partsPerResharpening || 0) >= batchQuantity 
                   ? 'Complete batches without interruption' 
                   : 'Tool change required during batch'}
               </Text>
@@ -260,11 +263,15 @@ const ToolWearDisplay = () => {
           </Text>
           
           <VStack align="stretch" spacing={2}>
-            {wearData.recommendations.map((rec, idx) => (
-              <Text key={idx} fontSize="xs">• {rec}</Text>
-            ))}
+            {wearData.recommendations && wearData.recommendations.length > 0 ? (
+              wearData.recommendations.map((rec, idx) => (
+                <Text key={idx} fontSize="xs">• {rec}</Text>
+              ))
+            ) : (
+              <Text fontSize="xs">• No specific recommendations available</Text>
+            )}
             
-            {wearData.relativeToBenchmark > 1.3 && (
+            {(wearData.relativeToBenchmark || 1) > 1.3 && (
               <Text fontSize="xs" color="red.500" fontWeight="medium" mt={2}>
                 Tool wear rate is significantly higher than industry average. Consider alternate tool materials or improved cooling methods.
               </Text>

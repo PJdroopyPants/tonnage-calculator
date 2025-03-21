@@ -47,13 +47,13 @@ const SurfaceFinishDisplay = () => {
   
   // Calculate surface finish values
   const { 
-    surfaceRoughness, 
-    microhardness, 
-    surfaceTexture,
-    textureRating,
-    qualityClass,
-    recommendations
-  } = calculateSurfaceFinish(material, inputValues, isMetric);
+    surfaceRoughness = 0, 
+    microhardness = { change: 0, description: 'No data available' }, 
+    surfaceTexture = 'Unknown',
+    textureRating = 'general',
+    qualityClass = 'N/A',
+    recommendations = []
+  } = calculateSurfaceFinish(material, inputValues, isMetric) || {};
   
   // Define gauge properties based on roughness value
   const getGaugeProps = (ra) => {
@@ -64,7 +64,7 @@ const SurfaceFinishDisplay = () => {
     return { color: 'red', label: 'Poor' };
   };
   
-  const gaugeProps = getGaugeProps(surfaceRoughness);
+  const gaugeProps = getGaugeProps(surfaceRoughness || 0);
   
   // Get lubricant info
   const getLubricantInfo = (type) => {
@@ -174,7 +174,7 @@ const SurfaceFinishDisplay = () => {
           </Text>
           <Flex align="center">
             <Text fontSize="md" fontWeight="bold" color={`${gaugeProps.color}.500`} mr={2}>
-              {surfaceRoughness.toFixed(2)} Ra
+              {(surfaceRoughness || 0).toFixed(2)} Ra
             </Text>
             <Text fontSize="xs" px={2} py={1} borderRadius="full" bg={`${gaugeProps.color}.100`} color={`${gaugeProps.color}.800`}>
               {gaugeProps.label}
@@ -197,12 +197,12 @@ const SurfaceFinishDisplay = () => {
             Microhardness Impact
           </Text>
           <Text fontSize="sm" fontWeight="medium">
-            {microhardness.change > 0 
+            {microhardness && microhardness.change > 0 
               ? `+${microhardness.change}% (Hardening)`
-              : `${microhardness.change}% (Softening)`}
+              : `${microhardness.change || 0}% (Softening)`}
           </Text>
           <Text fontSize="xs" color={labelColor} mt={1}>
-            {microhardness.description}
+            {microhardness && microhardness.description}
           </Text>
         </Box>
         
@@ -211,7 +211,7 @@ const SurfaceFinishDisplay = () => {
             Surface Texture
           </Text>
           <Text fontSize="sm" fontWeight="medium">
-            {surfaceTexture}
+            {surfaceTexture || 'Unknown'}
           </Text>
           <Text fontSize="xs" color={labelColor} mt={1}>
             {lubricantInfo}
@@ -224,11 +224,17 @@ const SurfaceFinishDisplay = () => {
           Improvement Recommendations
         </Text>
         
-        {recommendations.map((rec, index) => (
-          <Text key={index} fontSize="xs" mb={1}>
-            • {rec}
+        {recommendations && recommendations.length > 0 ? (
+          recommendations.map((rec, index) => (
+            <Text key={index} fontSize="xs" mb={1}>
+              • {rec}
+            </Text>
+          ))
+        ) : (
+          <Text fontSize="xs" mb={1}>
+            • No specific recommendations available
           </Text>
-        ))}
+        )}
       </Box>
     </CardContainer>
   );
