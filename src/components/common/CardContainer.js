@@ -2,12 +2,11 @@ import React from 'react';
 import { 
   Box, 
   Heading, 
-  Flex, 
-  useColorModeValue 
+  Flex 
 } from '@chakra-ui/react';
 
 /**
- * Reusable card container component that automatically adapts to color mode
+ * Reusable card container component
  */
 const CardContainer = ({ 
   title, 
@@ -15,10 +14,10 @@ const CardContainer = ({
   action,
   ...props 
 }) => {
-  // Color mode dependent styles
-  const bgColor = useColorModeValue('white', 'gray.700');
-  const titleColor = useColorModeValue('blue.600', 'blue.200');
-  const borderColor = useColorModeValue('gray.200', 'gray.600');
+  // Light mode styles
+  const bgColor = 'white';
+  const titleColor = 'blue.600';
+  const borderColor = 'gray.200';
   
   return (
     <Box

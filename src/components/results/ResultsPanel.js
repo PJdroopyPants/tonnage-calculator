@@ -8,8 +8,7 @@ import {
   Text,
   Button,
   Badge,
-  useToast,
-  useColorModeValue
+  useToast
 } from '@chakra-ui/react';
 import { saveCalculation } from '../../store/savedCalculationsSlice';
 import { formatWithUnit, metricToUsTons } from '../../services/UnitConversionService';
@@ -28,14 +27,14 @@ const ResultsPanel = () => {
   const [feedbackVisible, setFeedbackVisible] = useState(false);
   const toast = useToast();
   
-  // Color mode dependent styles - must be called at the top level
-  const batchInfoBg = useColorModeValue('blue.50', 'blue.900');
-  const batchLabelColor = useColorModeValue('gray.600', 'gray.300');
-  const resultLabelColor = useColorModeValue('gray.600', 'gray.300');
-  const propertyLabelColor = useColorModeValue('gray.600', 'gray.300');
-  const borderColor = useColorModeValue('gray.200', 'gray.600');
-  const noResultsBg = useColorModeValue('gray.100', 'gray.700');
-  const noResultsColor = useColorModeValue('gray.600', 'gray.300');
+  // Light mode styles
+  const batchInfoBg = 'blue.50';
+  const batchLabelColor = 'gray.600';
+  const resultLabelColor = 'gray.600';
+  const propertyLabelColor = 'gray.600';
+  const borderColor = 'gray.200';
+  const noResultsBg = 'gray.100';
+  const noResultsColor = 'gray.600';
   
   // Helper function to calculate the properly converted total tonnage in imperial units
   const calculateConvertedTotalTonnage = () => {

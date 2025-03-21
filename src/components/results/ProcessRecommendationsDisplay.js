@@ -1,29 +1,143 @@
 import React, { useState } from 'react';
+import styled from '@emotion/styled';
 import { useSelector } from 'react-redux';
-import {
-  Box,
-  Heading,
-  Text,
-  Select,
-  Grid,
-  VStack,
-  Flex,
-  useColorModeValue
-} from '@chakra-ui/react';
 import { generateProcessRecommendations } from '../../services/ProcessRecommendationsService';
-import CardContainer from '../common/CardContainer';
+
+const Container = styled.div`
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 16px;
+`;
+
+const Title = styled.h4`
+  font-size: 1.1rem;
+  margin: 0 0 16px 0;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Description = styled.p`
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin: 0 0 16px 0;
+`;
+
+const OperationSelector = styled.div`
+  margin-bottom: 16px;
+`;
+
+const Select = styled.select`
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+  }
+`;
+
+const RecommendationsGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+`;
+
+const RecommendationCard = styled.div`
+  background-color: var(--bg-light);
+  border-radius: 4px;
+  padding: 12px;
+  border-left: 3px solid var(--primary-color);
+`;
+
+const ParameterName = styled.div`
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  margin-bottom: 4px;
+`;
+
+const ParameterValue = styled.div`
+  font-size: 1.05rem;
+  font-weight: 500;
+`;
+
+const SpecificRecommendations = styled.div`
+  background-color: var(--bg-light);
+  border-radius: 4px;
+  padding: 16px;
+  margin-top: 16px;
+`;
+
+const SpecificTitle = styled.div`
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+`;
+
+const SpecificItem = styled.div`
+  margin-bottom: 12px;
+  
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+`;
+
+const SpecificLabel = styled.div`
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  margin-bottom: 2px;
+`;
+
+const SpecificValue = styled.div`
+  font-size: 0.95rem;
+`;
+
+const EfficiencyIndicator = styled.div`
+  margin-top: 16px;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--secondary-color);
+`;
+
+const RecommendationSection = styled.div`
+  margin-bottom: 24px;
+`;
+
+const SectionHeader = styled.h5`
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-light);
+`;
+
+const InfoText = styled.p`
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin: 12px 0;
+  padding: 8px 12px;
+  background-color: rgba(25, 118, 210, 0.05);
+  border-left: 2px solid var(--primary-color);
+  border-radius: 2px;
+`;
 
 const ProcessRecommendationsDisplay = () => {
   const [selectedOperation, setSelectedOperation] = useState('general');
   const { selected: material } = useSelector(state => state.materials);
   const operations = useSelector(state => state.operations);
-  
-  // Color mode styles
-  const cardBg = useColorModeValue('gray.50', 'gray.700');
-  const borderColor = useColorModeValue('gray.200', 'gray.600');
-  const labelColor = useColorModeValue('gray.600', 'gray.400');
-  const primaryColor = useColorModeValue('blue.600', 'blue.200');
-  const infoBg = useColorModeValue('blue.50', 'blue.900');
   
   if (!material) {
     return null;
@@ -34,19 +148,7 @@ const ProcessRecommendationsDisplay = () => {
   };
   
   // Generate recommendations based on selected operation type
-  const recommendations = generateProcessRecommendations(material, selectedOperation) || {
-    title: 'Process Recommendations', 
-    description: 'No specific recommendations available for this material and operation.',
-    dieClearance: 'N/A',
-    punchSpeed: 'N/A',
-    blankHoldingForce: 'N/A',
-    lubricantType: 'N/A',
-    temperatureRange: 'N/A',
-    maxFormingDepth: 'N/A',
-    grainDirectionEffect: 'N/A',
-    specific: {},
-    efficiencyImprovement: '10-15%'
-  };
+  const recommendations = generateProcessRecommendations(material, selectedOperation);
   
   if (!recommendations) {
     return null;
@@ -61,113 +163,125 @@ const ProcessRecommendationsDisplay = () => {
   if (operations.draws?.enabled) enabledOperations.push({ id: 'draw', name: 'Drawing' });
   
   return (
-    <CardContainer title={recommendations.title || 'Process Recommendations'}>
-      <Text fontSize="sm" color={labelColor} mb={4}>
-        {recommendations.description || 'Analyze process parameters for optimal performance.'}
-      </Text>
+    <Container>
+      <Title>{recommendations.title || 'Process Recommendations'}</Title>
       
-      <Box mb={4}>
+      <Description>{recommendations.description}</Description>
+      
+      <OperationSelector>
         <Select 
           value={selectedOperation}
           onChange={handleOperationChange}
-          size="md"
         >
           <option value="general">General Parameters</option>
           {enabledOperations.map(op => (
             <option key={op.id} value={op.id}>{op.name} Parameters</option>
           ))}
         </Select>
-      </Box>
+      </OperationSelector>
       
-      <VStack spacing={6} align="stretch">
-        <Box>
-          <Heading as="h4" size="sm" color={primaryColor} mb={3} pb={2} borderBottomWidth="1px" borderColor={borderColor}>
-            Key Process Parameters
-          </Heading>
+      <RecommendationSection>
+        <SectionHeader>Key Process Parameters</SectionHeader>
+        <RecommendationsGrid>
+          <RecommendationCard>
+            <ParameterName>Die Clearance</ParameterName>
+            <ParameterValue>{recommendations.dieClearance}</ParameterValue>
+          </RecommendationCard>
           
-          <Grid templateColumns={["1fr", null, "1fr 1fr", "repeat(3, 1fr)"]} gap={3} mb={3}>
-            <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
-              <Text fontSize="xs" color={labelColor} mb={1}>Die Clearance</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.dieClearance || 'N/A'}</Text>
-            </Box>
-            
-            <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
-              <Text fontSize="xs" color={labelColor} mb={1}>Punch Speed</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.punchSpeed || 'N/A'}</Text>
-            </Box>
-            
-            <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
-              <Text fontSize="xs" color={labelColor} mb={1}>Blank Holding Force</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.blankHoldingForce || 'N/A'}</Text>
-            </Box>
-            
-            <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
-              <Text fontSize="xs" color={labelColor} mb={1}>Lubricant Type</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.lubricantType || 'N/A'}</Text>
-            </Box>
-            
-            <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
-              <Text fontSize="xs" color={labelColor} mb={1}>Temperature Range</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.temperatureRange || 'N/A'}</Text>
-            </Box>
-            
-            <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
-              <Text fontSize="xs" color={labelColor} mb={1}>Maximum Forming Depth</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.maxFormingDepth || 'N/A'}</Text>
-            </Box>
-          </Grid>
+          <RecommendationCard>
+            <ParameterName>Punch Speed</ParameterName>
+            <ParameterValue>{recommendations.punchSpeed}</ParameterValue>
+          </RecommendationCard>
           
-          <Box p={3} bg={infoBg} borderRadius="md" fontSize="xs" color={labelColor}>
-            These parameters are optimized for the selected material and operation. 
-            Proper die clearance, punch speed, and blank holding force are critical for reducing tonnage requirements 
-            and improving part quality.
-          </Box>
-        </Box>
-        
-        <Box>
-          <Heading as="h4" size="sm" color={primaryColor} mb={3} pb={2} borderBottomWidth="1px" borderColor={borderColor}>
-            Material-Specific Process Factors
-          </Heading>
+          <RecommendationCard>
+            <ParameterName>Blank Holding Force</ParameterName>
+            <ParameterValue>{recommendations.blankHoldingForce}</ParameterValue>
+          </RecommendationCard>
           
-          <Grid templateColumns={["1fr", null, "1fr 1fr", "repeat(3, 1fr)"]} gap={3}>
-            <Box p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
-              <Text fontSize="xs" color={labelColor} mb={1}>Grain Direction Effect</Text>
-              <Text fontSize="sm" fontWeight="medium">{recommendations.grainDirectionEffect || 'N/A'}</Text>
-            </Box>
-            
-            {recommendations.specific && Object.entries(recommendations.specific)
-              .filter(([key]) => !['blankHolderPressure'].includes(key))
-              .slice(0, 5)
-              .map(([key, value]) => (
-                <Box key={key} p={3} bg={cardBg} borderRadius="md" borderLeftWidth="3px" borderLeftColor="blue.500">
-                  <Text fontSize="xs" color={labelColor} mb={1}>
-                    {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
-                  </Text>
-                  <Text fontSize="sm" fontWeight="medium">{value || 'N/A'}</Text>
-                </Box>
-              ))
-            }
-          </Grid>
-        </Box>
+          <RecommendationCard>
+            <ParameterName>Lubricant Type</ParameterName>
+            <ParameterValue>{recommendations.lubricantType}</ParameterValue>
+          </RecommendationCard>
+          
+          <RecommendationCard>
+            <ParameterName>Temperature Range</ParameterName>
+            <ParameterValue>{recommendations.temperatureRange}</ParameterValue>
+          </RecommendationCard>
+          
+          <RecommendationCard>
+            <ParameterName>Maximum Forming Depth</ParameterName>
+            <ParameterValue>{recommendations.maxFormingDepth}</ParameterValue>
+          </RecommendationCard>
+        </RecommendationsGrid>
         
-        {recommendations.specific && recommendations.specific.blankHolderPressure && (
-          <Box p={4} bg={cardBg} borderRadius="md" mt={2} borderLeftWidth="3px" borderLeftColor="purple.500">
-            <Text fontSize="md" fontWeight="medium" color={primaryColor} mb={3}>
-              Advanced Process Settings
-            </Text>
-            
-            <Box mb={3}>
-              <Text fontSize="xs" color={labelColor} mb={1}>Blank Holder Pressure</Text>
-              <Text fontSize="sm">{recommendations.specific.blankHolderPressure}</Text>
-            </Box>
-          </Box>
-        )}
-        
-        <Text fontSize="sm" fontStyle="italic" color={labelColor} mt={2}>
-          Efficiency Note: Using recommended settings can improve process efficiency by up to {recommendations.efficiencyImprovement || '20-30%'}.
-        </Text>
-      </VStack>
-    </CardContainer>
+        <InfoText>
+          These parameters are optimized for the selected material and operation. 
+          Proper die clearance, punch speed, and blank holding force are critical for reducing tonnage requirements 
+          and improving part quality.
+        </InfoText>
+      </RecommendationSection>
+      
+      <RecommendationSection>
+        <SectionHeader>Material-Specific Process Factors</SectionHeader>
+        <RecommendationsGrid>
+          <RecommendationCard>
+            <ParameterName>Grain Direction Effect</ParameterName>
+            <ParameterValue>{recommendations.grainDirectionEffect}</ParameterValue>
+          </RecommendationCard>
+          
+          {recommendations.specific && Object.entries(recommendations.specific)
+            .filter(([key]) => !['blankHolderPressure'].includes(key))
+            .slice(0, 5)
+            .map(([key, value]) => (
+              <RecommendationCard key={key}>
+                <ParameterName>{key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</ParameterName>
+                <ParameterValue>{value}</ParameterValue>
+              </RecommendationCard>
+            ))
+          }
+        </RecommendationsGrid>
+      </RecommendationSection>
+      
+      {recommendations.specific && recommendations.specific.blankHolderPressure && (
+        <SpecificRecommendations>
+          <SpecificTitle>Advanced Process Settings</SpecificTitle>
+          <SpecificItem>
+            <SpecificLabel>Blank Holder Pressure</SpecificLabel>
+            <SpecificValue>{recommendations.specific.blankHolderPressure}</SpecificValue>
+          </SpecificItem>
+          {selectedOperation === 'draw' && (
+            <InfoText>
+              Proper blank holder pressure is critical for drawing operations to prevent wrinkling while allowing material flow.
+              Adjust blank holder pressure throughout the stroke for optimal results.
+            </InfoText>
+          )}
+        </SpecificRecommendations>
+      )}
+      
+      {recommendations.specific && Object.entries(recommendations.specific).length > 6 && (
+        <SpecificRecommendations>
+          <SpecificTitle>Operation-Specific Parameters</SpecificTitle>
+          
+          {Object.entries(recommendations.specific)
+            .filter(([key]) => !['blankHolderPressure'].includes(key))
+            .slice(5)
+            .map(([key, value]) => (
+              <SpecificItem key={key}>
+                <SpecificLabel>{key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</SpecificLabel>
+                <SpecificValue>{value}</SpecificValue>
+              </SpecificItem>
+            ))
+          }
+        </SpecificRecommendations>
+      )}
+      
+      <EfficiencyIndicator>
+        Tonnage Efficiency Factor: {recommendations.tonnageEfficiencyFactor}
+        {recommendations.tonnageEfficiencyFactor < 1 
+          ? ' (Reduces required tonnage)' 
+          : ' (Increases required tonnage)'}
+      </EfficiencyIndicator>
+    </Container>
   );
 };
 

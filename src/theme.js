@@ -5,7 +5,7 @@ import { colors, typography, spacing, shadows, borders } from './assets/theme';
 const theme = extendTheme({
   config: {
     initialColorMode: 'light',
-    useSystemColorMode: true,
+    useSystemColorMode: false,
   },
   colors: {
     primary: {
@@ -145,14 +145,14 @@ const theme = extendTheme({
       },
     },
   },
-  // Dark mode overrides
+  // Light mode styles only
   styles: {
-    global: (props) => ({
+    global: {
       body: {
-        bg: props.colorMode === 'dark' ? 'gray.800' : 'gray.50',
-        color: props.colorMode === 'dark' ? 'white' : 'gray.800',
+        bg: 'gray.50',
+        color: 'gray.800',
       },
-    }),
+    },
   },
 });
 

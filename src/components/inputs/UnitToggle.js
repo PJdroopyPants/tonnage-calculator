@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { 
   ButtonGroup, 
   Button, 
-  Tooltip, 
-  useColorModeValue
+  Tooltip
 } from '@chakra-ui/react';
 import { toggleUnits } from '../../store/parametersSlice';
 
@@ -12,11 +11,11 @@ const UnitToggle = () => {
   const dispatch = useDispatch();
   const isMetric = useSelector(state => state.parameters.isMetric);
   
-  // Custom colors based on color mode
-  const activeBg = useColorModeValue('primary.500', 'primary.400');
-  const activeColor = useColorModeValue('white', 'white');
-  const inactiveBg = useColorModeValue('gray.100', 'gray.700');
-  const inactiveColor = useColorModeValue('gray.700', 'gray.200');
+  // Light mode colors
+  const activeBg = 'primary.500';
+  const activeColor = 'white';
+  const inactiveBg = 'gray.100';
+  const inactiveColor = 'gray.700';
   
   const handleToggle = () => {
     dispatch(toggleUnits());

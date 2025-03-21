@@ -12,7 +12,6 @@ import {
   StepTitle,
   Stepper,
   Text,
-  useColorModeValue,
   useBreakpointValue
 } from '@chakra-ui/react';
 
@@ -28,9 +27,9 @@ const CalculationProgress = ({ currentStep }) => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const stepTextDisplay = useBreakpointValue({ base: 'none', md: 'block' });
 
-  // Color mode based adjustments
-  const bgColor = useColorModeValue('blue.50', 'blue.900');
-  const borderColor = useColorModeValue('blue.100', 'blue.700');
+  // Light mode styles
+  const bgColor = 'blue.50';
+  const borderColor = 'blue.100';
   
   // If on mobile, just show a simplified progress bar
   if (isMobile) {

@@ -10,8 +10,7 @@ import {
   TabPanel, 
   TabPanels, 
   Tabs,
-  Text,
-  useColorModeValue
+  Text
 } from '@chakra-ui/react';
 import { fetchMaterials } from './store/materialsSlice';
 import { calculateTonnage } from './store/resultsSlice';
@@ -23,7 +22,6 @@ import OperationsPanel from './components/operations/OperationsPanel';
 import ResultsPanel from './components/results/ResultsPanel';
 import SavedCalculationsPanel from './components/saved/SavedCalculationsPanel';
 import BatchQuantityInput from './components/inputs/BatchQuantityInput';
-import ColorModeToggle from './components/common/ColorModeToggle';
 import CalculationProgress from './components/common/CalculationProgress';
 import Logo from './components/common/Logo';
 
@@ -34,10 +32,10 @@ const App = () => {
   const parameters = useSelector(state => state.parameters);
   const operations = useSelector(state => state.operations);
   
-  // Background colors based on color mode
-  const bgColor = useColorModeValue('gray.50', 'gray.800');
-  const cardBgColor = useColorModeValue('white', 'gray.700');
-  const borderColor = useColorModeValue('gray.200', 'gray.600');
+  // Background colors 
+  const bgColor = 'gray.50';
+  const cardBgColor = 'white';
+  const borderColor = 'gray.200';
   
   useEffect(() => {
     dispatch(fetchMaterials());
@@ -94,7 +92,6 @@ const App = () => {
           
           <Flex align="center" gap={4}>
             <UnitToggle />
-            <ColorModeToggle />
           </Flex>
         </Flex>
         
