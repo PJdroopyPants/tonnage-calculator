@@ -1,26 +1,24 @@
 import React from 'react';
 import { Box, useColorModeValue } from '@chakra-ui/react';
-import logoSvg from '../../assets/SUTHERLAND_PRESSES_LOGO.svg';
+import logoLightMode from '../../assets/SUTHERLAND_PRESSES_LOGO.svg';
+import logoDarkMode from '../../assets/SUTHERLAND_PRESSES_LOGO_DARKMODE.svg';
 
 /**
  * Logo component for Sutherland Presses
- * The logo adapts to dark/light mode automatically
+ * Uses different logo files for light and dark mode
  */
 const Logo = ({ height = "40px", ...props }) => {
-  // Background for the logo based on color mode
-  const bgColor = useColorModeValue('transparent', 'rgba(255, 255, 255, 0.1)');
-  const borderRadius = "md";
+  // Use appropriate logo based on color mode
+  const logoSrc = useColorModeValue(logoLightMode, logoDarkMode);
   
   return (
     <Box 
       height={height} 
-      bgColor={bgColor}
-      borderRadius={borderRadius}
       p={1}
       {...props}
     >
       <img 
-        src={logoSvg} 
+        src={logoSrc} 
         alt="Sutherland Presses Logo" 
         style={{ 
           height: '100%', 

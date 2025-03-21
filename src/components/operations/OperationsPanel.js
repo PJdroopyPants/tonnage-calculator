@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { useSelector } from 'react-redux';
+import { VStack, Box, Text, useColorModeValue } from '@chakra-ui/react';
 import OperationTypeSelector from './OperationTypeSelector';
 import PerimeterSection from './PerimeterSection';
 import HolesSection from './HolesSection';
@@ -8,34 +8,30 @@ import BendsSection from './BendsSection';
 import FormsSection from './FormsSection';
 import DrawsSection from './DrawsSection';
 
-const PanelContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
-const NoMaterialMessage = styled.div`
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 4px;
-  text-align: center;
-  color: var(--secondary-color);
-`;
-
 const OperationsPanel = () => {
   const { selected: selectedMaterial } = useSelector(state => state.materials);
   const operations = useSelector(state => state.operations);
   
+  // Color mode styles
+  const noMaterialBg = useColorModeValue('gray.100', 'gray.700');
+  const noMaterialColor = useColorModeValue('gray.600', 'gray.300');
+  
   if (!selectedMaterial) {
     return (
-      <NoMaterialMessage>
+      <Box
+        p={5}
+        bg={noMaterialBg}
+        borderRadius="md"
+        textAlign="center"
+        color={noMaterialColor}
+      >
         Please select a material to configure operations.
-      </NoMaterialMessage>
+      </Box>
     );
   }
   
   return (
-    <PanelContainer>
+    <VStack spacing={5} align="stretch">
       <OperationTypeSelector />
       
       {operations.perimeter.enabled && (
@@ -57,7 +53,7 @@ const OperationsPanel = () => {
       {operations.draws.enabled && (
         <DrawsSection />
       )}
-    </PanelContainer>
+    </VStack>
   );
 };
 

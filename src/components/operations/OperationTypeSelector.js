@@ -1,61 +1,14 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { useDispatch, useSelector } from 'react-redux';
+import { 
+  Box, 
+  Heading, 
+  Flex, 
+  Checkbox, 
+  Text, 
+  useColorModeValue 
+} from '@chakra-ui/react';
 import { toggleOperationType, addHole, addBend, addForm, addDraw } from '../../store/operationsSlice';
-
-const SelectorContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 15px;
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-`;
-
-const Title = styled.h3`
-  font-size: 1.1rem;
-  margin: 0 0 10px 0;
-  color: var(--secondary-color);
-`;
-
-const OperationTypes = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-`;
-
-const OperationLabel = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  background-color: ${props => props.checked ? 'rgba(25, 118, 210, 0.1)' : '#f5f5f5'};
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  
-  &:hover {
-    background-color: ${props => props.checked ? 'rgba(25, 118, 210, 0.15)' : '#e0e0e0'};
-  }
-`;
-
-const CheckboxInput = styled.input`
-  margin: 0;
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-  width: 16px;
-  height: 16px;
-  
-  &:focus {
-    outline: 2px solid rgba(25, 118, 210, 0.6);
-  }
-`;
-
-const LabelText = styled.span`
-  font-size: 0.9rem;
-`;
 
 const operationTypes = [
   { id: 'perimeter', label: 'Perimeter Cutting' },
@@ -68,6 +21,15 @@ const operationTypes = [
 const OperationTypeSelector = () => {
   const dispatch = useDispatch();
   const operations = useSelector(state => state.operations);
+  
+  // Color mode dependent styles
+  const containerBg = useColorModeValue('white', 'gray.700');
+  const titleColor = useColorModeValue('gray.600', 'gray.200');
+  const checkboxBg = useColorModeValue('gray.100', 'gray.600');
+  const checkboxActiveBg = useColorModeValue('blue.50', 'blue.900');
+  const checkboxHoverBg = useColorModeValue('gray.200', 'gray.500');
+  const checkboxActiveHoverBg = useColorModeValue('blue.100', 'blue.800');
+  const borderColor = useColorModeValue('gray.200', 'gray.600');
   
   const handleToggle = (operationType) => {
     const isCurrentlyEnabled = operations[operationType].enabled;
@@ -101,29 +63,48 @@ const OperationTypeSelector = () => {
   };
   
   return (
-    <SelectorContainer>
-      <Title>Select Operations</Title>
-      <OperationTypes>
+    <Box 
+      p={4} 
+      bg={containerBg} 
+      borderRadius="md" 
+      boxShadow="sm"
+      borderWidth="1px"
+      borderColor={borderColor}
+    >
+      <Heading as="h3" size="sm" mb={3} color={titleColor}>
+        Select Operations
+      </Heading>
+      
+      <Flex wrap="wrap" gap={2}>
         {operationTypes.map(operation => {
           const isEnabled = operations[operation.id].enabled;
           return (
-            <OperationLabel 
+            <Box 
               key={operation.id}
-              htmlFor={`operation-${operation.id}`}
-              checked={isEnabled}
+              py={2}
+              px={3}
+              borderRadius="md"
+              bg={isEnabled ? checkboxActiveBg : checkboxBg}
+              _hover={{
+                bg: isEnabled ? checkboxActiveHoverBg : checkboxHoverBg
+              }}
+              transition="background-color 0.2s"
             >
-              <CheckboxInput
-                type="checkbox"
+              <Checkbox 
                 id={`operation-${operation.id}`}
-                checked={isEnabled}
+                isChecked={isEnabled}
                 onChange={() => handleToggle(operation.id)}
-              />
-              <LabelText>{operation.label}</LabelText>
-            </OperationLabel>
+                colorScheme="blue"
+              >
+                <Text fontSize="sm">
+                  {operation.label}
+                </Text>
+              </Checkbox>
+            </Box>
           );
         })}
-      </OperationTypes>
-    </SelectorContainer>
+      </Flex>
+    </Box>
   );
 };
 
