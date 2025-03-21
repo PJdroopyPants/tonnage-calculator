@@ -28,12 +28,14 @@ const ResultsPanel = () => {
   const [feedbackVisible, setFeedbackVisible] = useState(false);
   const toast = useToast();
   
-  // Color mode dependent styles
+  // Color mode dependent styles - must be called at the top level
   const batchInfoBg = useColorModeValue('blue.50', 'blue.900');
   const batchLabelColor = useColorModeValue('gray.600', 'gray.300');
   const resultLabelColor = useColorModeValue('gray.600', 'gray.300');
   const propertyLabelColor = useColorModeValue('gray.600', 'gray.300');
   const borderColor = useColorModeValue('gray.200', 'gray.600');
+  const noResultsBg = useColorModeValue('gray.100', 'gray.700');
+  const noResultsColor = useColorModeValue('gray.600', 'gray.300');
   
   // Helper function to calculate the properly converted total tonnage in imperial units
   const calculateConvertedTotalTonnage = () => {
@@ -158,10 +160,10 @@ const ResultsPanel = () => {
     return (
       <Box
         p={5}
-        bg={useColorModeValue('gray.100', 'gray.700')}
+        bg={noResultsBg}
         borderRadius="md"
         textAlign="center"
-        color={useColorModeValue('gray.600', 'gray.300')}
+        color={noResultsColor}
       >
         Configure material and operations to see results.
       </Box>
